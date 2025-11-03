@@ -1,0 +1,279 @@
+/* ==============================
+    VARIABLES DE DISEÑO
+    ============================== */
+:root {
+  /* Paleta de colores moderna */
+  --primary: #6b5b95; /* violeta elegante (Oscuro) */
+  --primary-light: #000000; /* Morado/Lila claro (Bajo contraste, usado para detalles) */
+  --secondary: #f7cac9; /* rosa suave */
+  --accent: #ffb347; /* naranja cálido (Enlaces importantes) */
+  --background: #fefefe;
+  --text-dark: #1a1a1a;
+  --text-light: #ffffff;    /* Blanco puro (Alto contraste) */
+  --card-bg: rgba(255, 255, 255, 0.08); /* Fondo MUY sutil para tarjetas */
+  --card-border: rgba(255, 255, 255, 0.1); /* Borde sutil */
+}
+
+/* ==============================
+    RESETEO
+    ============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: var(--font-primary);
+  color: var(--text-light); 
+  scroll-behavior: smooth;
+}
+
+/* ==============================
+    BODY / FONDO INICIO
+    ============================== */
+body {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Overlay y fondo - Usando la imagen */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('images/programacion.jpg'); /* ¡Asegura que esta ruta es correcta! */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: brightness(0.5); /* overlay oscuro para mejorar el contraste */
+  z-index: -1;
+}
+
+/* ==============================
+    HEADER / NAVBAR
+    ============================== */
+/* ==============================
+    HEADER / NAVBAR
+    ============================== */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); 
+}
+.logo {
+  color: #c6b7eb;
+}
+nav a {
+  color: var(--text-light) !important; 
+  margin: 0 1.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus {
+  color: var(--accent) !important; 
+  transform: translateY(-2px);
+}
+/* ==============================
+    SECCIONES: CONTENEDOR PRINCIPAL (Glassmorphism)
+    ============================== */
+section {
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 100px auto 0; 
+  
+  /* Fondo semi-transparente para que se vea el body::before */
+  background-color: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(5px);
+  border-radius: 15px; 
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6); 
+  
+  /* Color del texto general (se sobrescribe por las secciones específicas) */
+  color: var(--primary-light); 
+}
+
+h2, h3 {
+  color: var(--text-light); /* Títulos de sección en blanco para que destaquen mucho */
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-align: center;
+  color: #6b5b95;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: var(--primary-light); /* Párrafos por defecto en morado/lila claro */
+}
+
+section a {
+    color: var(--secondary); /* Enlaces por defecto en rosa suave */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+section a:hover {
+    color: var(--accent); 
+}
+
+/* ==============================
+    AJUSTES ESPECÍFICOS PARA SECCIÓN #SOBREMI (ALTO CONTRASTE) 💡
+    ============================== */
+
+/* Hacemos que el texto de párrafos en #sobremi sea blanco para máxima legibilidad */
+#intro p {
+    color: var(--text-light); /* <- ¡Blanco puro! */
+    text-shadow: 0 0 5px rgb(245, 217, 238); 
+}
+
+/* Títulos h2 y h3 de la sección Sobre mí */
+#intro  h2 {
+    color: var(--secondary); 
+    color: #c6b7eb;
+}
+#intro h1{
+   color:#c2b8db;
+    margin-bottom: 2.5rem; 
+    font-size: 4rem; 
+    font-weight: 700;
+}
+
+#intro a:hover {
+    color: var(--primary-light); 
+}
+
+
+img {
+  display: block;
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 800px; 
+  border-radius: 15px;
+  box-shadow: 0 6px 25px var(--shadow-light);
+  transform: none; /* Asegura que la imagen no esté torcida */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+img:hover {
+  transform: scale(1.02); 
+  box-shadow: 0 12px 35px var(--shadow-medium);
+}
+
+#formation h2 {
+    color:#c6b7eb;
+    text-align: center;
+    margin-bottom: 2.5rem; 
+    font-size: 4rem; 
+    font-weight: 700;
+}
+
+
+#projects h2 {
+    color:#c6b7eb;
+    text-align: center;
+    margin-bottom: 2.5rem; 
+    font-size: 4rem; 
+    font-weight: 700;
+}
+
+.project-card { 
+    background-color: var(--card-bg); 
+    border: 1px solid var(--card-border); 
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+
+
+
+.project-card .project-title-name { 
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent); 
+    margin-bottom: 0.5rem;
+    display: block; 
+}
+
+.project-card img {
+    max-width: 700px; 
+    margin-top: 2rem; 
+    border: 2px solid var(--primary-light); 
+}
+
+/* ==============================
+    AJUSTES ESPECÍFICOS PARA EL FOOTER
+    ============================== */
+
+/* Contenedor principal del footer */
+.footer-container {
+    /* Usamos un color de texto CLARO (Blanco puro) para máximo contraste */
+    color: var(--text-light) !important; 
+    
+    /* Asegura que el fondo del footer sea más oscuro si el body::before no es suficiente */
+    background-color: rgba(27, 27, 49, 0.8) !important; 
+    
+    /* Opcional: para el efecto de fondo borroso */
+    backdrop-filter: blur(4px) !important;
+}
+
+/* Párrafos dentro del footer (Copyright y texto principal) */
+/* El !important es crucial si otros selectores lo están sobrescribiendo */
+.footer-container p {
+    color: var(--text-light) !important; /* Fuerza el blanco */
+    font-size: 0.95rem; /* Ajuste sutil de tamaño */
+}
+
+/* Enlace de contacto */
+.footer-container a {
+    color: var(--accent) !important; /* Fuerza tu color naranja cálido */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.footer-container a:hover {
+    color: var(--secondary) !important; /* Rosa suave al pasar el ratón */
+}
+@media (max-width: 768px) {
+  #inicio h1 {
+    font-size: 2.5rem;
+  }
+
+  #inicio p {
+    font-size: 1rem;
+  }
+
+  nav a {
+    margin: 0 1rem;
+  }
+
+  section {
+      padding: 4rem 1rem; 
+      margin-top: 80px;
+  }
+}
