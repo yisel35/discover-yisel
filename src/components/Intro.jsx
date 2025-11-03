@@ -71,7 +71,7 @@ export default function Intro() {
             href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-2 rounded-full bg-violet-600 text-white font-medium hover:bg-violet-500 transition-all shadow-md"
+            className="px-6 py-2 rounded-full border-2 border-violet-600 text-violet-600 font-medium hover:bg-violet-600 hover:text-white transition-all shadow-sm"
           >
             Ver LinkedIn
           </a>

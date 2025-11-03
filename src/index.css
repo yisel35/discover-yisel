@@ -225,9 +225,7 @@ img:hover {
     border: 2px solid var(--primary-light); 
 }
 
-/* ==============================
-    AJUSTES ESPECÍFICOS PARA EL FOOTER
-    ============================== */
+
 
 /* Contenedor principal del footer */
 .footer-container {
@@ -241,23 +239,24 @@ img:hover {
     backdrop-filter: blur(4px) !important;
 }
 
-/* Párrafos dentro del footer (Copyright y texto principal) */
-/* El !important es crucial si otros selectores lo están sobrescribiendo */
 .footer-container p {
     color: var(--text-light) !important; /* Fuerza el blanco */
-    font-size: 0.95rem; /* Ajuste sutil de tamaño */
+    font-size: 0.95rem; 
 }
 
-/* Enlace de contacto */
+
 .footer-container a {
-    color: var(--accent) !important; /* Fuerza tu color naranja cálido */
+    color: var(--accent) !important; 
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
 }
 
 .footer-container a:hover {
-    color: var(--secondary) !important; /* Rosa suave al pasar el ratón */
+    color: var(--secondary) !important; 
+
+
+
 }
 @media (max-width: 768px) {
   #inicio h1 {
