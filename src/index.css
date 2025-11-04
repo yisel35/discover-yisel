@@ -140,7 +140,7 @@ section a:hover {
     text-shadow: 0 0 5px rgb(245, 217, 238); 
 }
 
-/* Títulos h2 y h3 de la sección Sobre mí */
+
 #intro  h2 {
     color: var(--secondary); 
     color: #c6b7eb;
@@ -181,13 +181,29 @@ img:hover {
     font-weight: 700;
 }
 
-
-#projects h2 {
-    color:#c6b7eb;
-    text-align: center;
+#projects h1{
+   color:#c2b8db;
     margin-bottom: 2.5rem; 
     font-size: 4rem; 
     font-weight: 700;
+    text-align: center;
+}
+
+  
+#projects h2 {
+    color:#c6b7eb;
+    text-align: center;
+    margin-bottom: 1.5rem; 
+    font-size: 1.9rem; 
+    font-weight:100;
+}
+#projects p {
+  color: #000000;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.9rem; /* ≈18px, más fino */
+  font-weight: 400; /* un poco más liviano */
+  letter-spacing: 0.3px; /* da aire entre letras */
 }
 
 .project-card { 

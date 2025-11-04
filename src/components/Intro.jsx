@@ -1,5 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import Button from 'react-bootstrap/Button' // 🔹 Importamos los botones de Bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css' // 🔹 Asegúrate de tener Bootstrap
 
 export default function Intro() {
   return (
@@ -12,8 +14,9 @@ export default function Intro() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
+        className="text-4xl md:text-5xl font-bold text-gray-800 mb-6"
       >
-        <h1>Hola, soy Kimberlyn Martínez</h1>
+        Hola, soy <span className="text-violet-700">Kimberlyn Martínez</span>
       </motion.h1>
 
       {/* Introducción */}
@@ -32,7 +35,7 @@ export default function Intro() {
         transition={{ delay: 0.6, duration: 0.8 }}
         className="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-8"
       >
-        Actualmente estoy perfeccionando mis habilidades en tecnologías como 
+        Actualmente estoy perfeccionando mis habilidades en 
         <span className="text-violet-600 font-medium"> HTML, CSS, JavaScript, React y SASS</span>, explorando también el mundo de la animación con <span className="font-medium">Framer Motion</span> y la creación de interfaces responsivas modernas.
       </motion.p>
 
@@ -45,7 +48,7 @@ export default function Intro() {
         Mi objetivo es seguir creciendo como profesional, trabajar en proyectos que me desafíen y aporten valor real, y seguir disfrutando del proceso creativo detrás de cada línea de código.
       </motion.p>
 
-      {/* Sección “Sobre mí” unificada */}
+      {/* Sección “Sobre mí” */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -66,23 +69,29 @@ export default function Intro() {
           Actualmente sigo aprendiendo y perfeccionando mis conocimientos en <span className="text-violet-600 font-medium">HTML, CSS, JavaScript, React y SASS</span>, con el objetivo de convertirme en una profesional sólida y versátil. Mi meta es formar parte de un equipo donde pueda seguir creciendo, compartir ideas y aportar mi energía y compromiso en cada proyecto.
         </p>
 
+        {/* BOTONES DE BOOTSTRAP */}
         <div className="flex justify-center gap-4 flex-wrap">
-          <a
+          {/* Botón LinkedIn */}
+          <Button
+            variant="outline-light"
             href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-2 rounded-full border-2 border-violet-600 text-violet-600 font-medium hover:bg-violet-600 hover:text-white transition-all shadow-sm"
+            className="px-5 py-2 rounded-full font-semibold text-violet-700 border-violet-700 hover:bg-violet-700 hover:text-white transition-all"
           >
-            Ver LinkedIn
-          </a>
+            💼 Ver LinkedIn
+          </Button>
 
-          <a
+          {/* Botón CV */}
+          <Button
+            variant="outline-light"
             href="https://www.canva.com/design/DAGwbsrKARI/Fh34H8D0Uvo493Tua3nT4Q/view?utm_content=DAGwbsrKARI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h8bb8f6b2d2"
-            download
-            className="px-6 py-2 rounded-full border-2 border-violet-600 text-violet-600 font-medium hover:bg-violet-600 hover:text-white transition-all shadow-sm"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-2 rounded-full font-semibold text-violet-700 border-violet-700 hover:bg-violet-700 hover:text-white transition-all"
           >
-            MI CV
-          </a>
+            📄 Ver mi CV
+          </Button>
         </div>
       </motion.div>
     </section>
