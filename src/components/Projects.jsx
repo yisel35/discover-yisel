@@ -53,7 +53,7 @@ const BootstrapProjectCarousel = ({ images }) => {
               alt={`Captura ${index + 1}`}
               style={{
                 height: "22rem",
-                objectFit: "contain", // 🔹 mantiene proporción sin cortar
+                objectFit: "contain", 
                 backgroundColor: "transparent",
               }}
             />

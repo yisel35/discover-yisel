@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import Button from 'react-bootstrap/Button' // 🔹 Importamos los botones de Bootstrap
-import 'bootstrap/dist/css/bootstrap.min.css' // 🔹 Asegúrate de tener Bootstrap
+import Button from 'react-bootstrap/Button' 
+import 'bootstrap/dist/css/bootstrap.min.css' 
 
 export default function Intro() {
   return (
@@ -48,7 +48,6 @@ export default function Intro() {
         Mi objetivo es seguir creciendo como profesional, trabajar en proyectos que me desafíen y aporten valor real, y seguir disfrutando del proceso creativo detrás de cada línea de código.
       </motion.p>
 
-      {/* Sección “Sobre mí” */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

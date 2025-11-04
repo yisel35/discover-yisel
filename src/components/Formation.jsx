@@ -25,7 +25,7 @@ export default function Formation() {
       title: 'React JS - Coderhouse',
       date: 'Mar 2025 - Jun 2025',
       desc: 'Hooks, Context API, rutas y optimización de componentes.',
-      link: null // En curso
+      link: null 
     }
   ]
 

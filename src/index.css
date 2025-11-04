@@ -201,9 +201,9 @@ img:hover {
   color: #000000;
   text-align: center;
   margin-bottom: 2rem;
-  font-size: 1.9rem; /* ≈18px, más fino */
-  font-weight: 400; /* un poco más liviano */
-  letter-spacing: 0.3px; /* da aire entre letras */
+  font-size: 1.9rem; 
+  font-weight: 400; 
+  letter-spacing: 0.3px; 
 }
 
 .project-card { 
@@ -242,18 +242,18 @@ img:hover {
 
 /* Contenedor principal del footer */
 .footer-container {
-    /* Usamos un color de texto CLARO (Blanco puro) para máximo contraste */
+   
     color: var(--text-light) !important; 
     
-    /* Asegura que el fondo del footer sea más oscuro si el body::before no es suficiente */
+    
     background-color: rgba(27, 27, 49, 0.8) !important; 
     
-    /* Opcional: para el efecto de fondo borroso */
+    
     backdrop-filter: blur(4px) !important;
 }
 
 .footer-container p {
-    color: var(--text-light) !important; /* Fuerza el blanco */
+    color: var(--text-light) !important; 
     font-size: 0.95rem; 
 }
 
