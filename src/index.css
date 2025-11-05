@@ -240,7 +240,6 @@ img:hover {
 
 
 
-/* Contenedor principal del footer */
 .footer-container {
    
     color: var(--text-light) !important; 
@@ -271,21 +270,40 @@ img:hover {
 
 
 }
+.carrusel-slide {
+  
+    width: 100vw; 
+}
+
+.carrusel-slide img {
+    max-width: 100%;
+    height: auto;
+}
 @media (max-width: 768px) {
-  #inicio h1 {
-    font-size: 2.5rem;
-  }
+    
+    #inicio h1 {
+        font-size: 2.5rem;
+    }
+    #inicio p {
+        font-size: 1rem;
+    }
+    
+   
+    nav {
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+    }
 
-  #inicio p {
-    font-size: 1rem;
-  }
+    nav a {
+        margin: 0.5rem 0; 
+        width: 100%; 
+        text-align: center;
+    }
 
-  nav a {
-    margin: 0 1rem;
-  }
-
-  section {
-      padding: 4rem 1rem; 
-      margin-top: 80px;
-  }
+    
+    section {
+        padding: 4rem 1rem; 
+        margin-top: 80px;
+    }
 }
