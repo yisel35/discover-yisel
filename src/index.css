@@ -279,31 +279,28 @@ img:hover {
     max-width: 100%;
     height: auto;
 }
-@media (max-width: 768px) {
+@media (min-width: 1025px) {
     
+    /* TIPOGRAFÍA: Tamaño grande para pantallas amplias. */
     #inicio h1 {
-        font-size: 2.5rem;
-    }
-    #inicio p {
-        font-size: 1rem;
+        font-size: 4rem;
     }
     
-   
+    /* NAVEGACIÓN: Horizontal y con buen espaciado. */
     nav {
-        display: flex; 
-        flex-direction: column; 
-        align-items: center; 
+        justify-content: space-around;
+        padding: 1.5rem 4rem;
     }
-
-    nav a {
-        margin: 0.5rem 0; 
-        width: 100%; 
-        text-align: center;
+    
+    /* GRID: Tres columnas (según tu código React) o más. */
+    .grid-proyectos {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+        max-width: 1200px; /* Limita el ancho en monitores muy grandes */
+        margin: 0 auto;
     }
-
     
     section {
-        padding: 4rem 1rem; 
-        margin-top: 80px;
+        padding: 8rem 4rem;
     }
 }
