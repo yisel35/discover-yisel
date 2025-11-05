@@ -4,9 +4,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// =========================================================================
-// 1. IMPORTACIONES Y DATOS DE PROYECTOS
-// =========================================================================
+
 import MundoArcaneImg from '/images/arcane.png';
 import TurismoVenezuelaImg from '/images/venezuela.png';
 import BancoShot1 from '/images/banco.png';
@@ -38,24 +36,20 @@ const proyectos = [
   },
 ];
 
-// =========================================================================
-// 2. CARRUSEL CON IMÁGENES MÁS GRANDES Y SIN FONDO NEGRO (CORREGIDO)
-// =========================================================================
+
 const BootstrapProjectCarousel = ({ images }) => {
   return (
-    // 🛑 SOLUCIÓN: Usamos una clase de Tailwind para definir la altura fija del contenedor.
-    // h-[22rem] = 352px. Asegúrate de que esta clase esté configurada en tu tailwind.config.js
     <div className="w-full overflow-hidden rounded-t-2xl flex items-center justify-center bg-transparent h-[22rem]">
       <Carousel data-bs-theme="dark" interval={null} controls={images.length > 1} indicators={false}>
         {images.map((imgSrc, index) => (
           <Carousel.Item key={index}>
             <img
-              // 🛑 CORRECCIÓN 1: Se agregó la propiedad 'src'.
+              
               src={imgSrc} 
               className="d-block w-100" 
               alt={`Captura ${index + 1}`}
               style={{
-                // 🛑 CORRECCIÓN 2: Usamos height: '100%' para heredar la altura del padre.
+               
                 height: "100%", 
                 objectFit: "contain", 
                 backgroundColor: "transparent",
@@ -83,7 +77,6 @@ export default function Projects() {
         Si el proyecto no está desplegado, disfruta recorriendo sus pantallas interactivas. 🖱️✨
       </h2>
 
-      {/* GRID DE PROYECTOS */}
       <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto px-6">
         {proyectos.map((p, i) => (
           <motion.article
@@ -94,7 +87,7 @@ export default function Projects() {
             viewport={{ once: true }}
             className="bg-white rounded-2xl overflow-hidden shadow-md border hover:shadow-lg transition-shadow duration-300 flex flex-col"
           >
-            {/* IMAGEN O CARRUSEL */}
+            
             {p.demoLink ? (
               <a
                 href={p.demoLink}
@@ -102,7 +95,7 @@ export default function Projects() {
                 rel="noopener noreferrer"
                 aria-label={`Ver demo de ${p.title}`}
                 className="block flex justify-center items-center bg-transparent"
-                // 🛑 AJUSTE: Usamos min/maxHeight para los contenedores estáticos.
+                
                 style={{ minHeight: "22rem", maxHeight: "22rem" }} 
               >
                 <img
@@ -119,7 +112,7 @@ export default function Projects() {
             ) : (
               <div 
                 className="flex justify-center items-center bg-transparent" 
-                // 🛑 AJUSTE: Usamos min/maxHeight para los contenedores estáticos.
+                
                 style={{ minHeight: "22rem", maxHeight: "22rem" }}
               >
                 <img

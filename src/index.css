@@ -1,22 +1,18 @@
-/* ==============================
-    VARIABLES DE DISEÑO
-    ============================== */
 :root {
-  /* Paleta de colores moderna */
-  --primary: #6b5b95; /* violeta elegante (Oscuro) */
-  --primary-light: #000000; /* Morado/Lila claro (Bajo contraste, usado para detalles) */
-  --secondary: #f7cac9; /* rosa suave */
-  --accent: #ffb347; /* naranja cálido (Enlaces importantes) */
+  --primary: #6b5b95; 
+  --primary-light: #000000; 
+  --secondary: #f7cac9; 
+  --accent: #ffb347; 
   --background: #fefefe;
   --text-dark: #1a1a1a;
-  --text-light: #ffffff;    /* Blanco puro (Alto contraste) */
-  --card-bg: rgba(255, 255, 255, 0.08); /* Fondo MUY sutil para tarjetas */
-  --card-border: rgba(255, 255, 255, 0.1); /* Borde sutil */
+  --text-light: #ffffff;
+  --card-bg: rgba(255, 255, 255, 0.08); 
+  --card-border: rgba(255, 255, 255, 0.1);
 }
 
 /* ==============================
-    RESETEO
-    ============================== */
+   RESET, FIX DE ANDROID Y ESTILOS BASE
+   ============================== */
 * {
   margin: 0;
   padding: 0;
@@ -28,11 +24,12 @@ html, body {
   font-family: var(--font-primary);
   color: var(--text-light); 
   scroll-behavior: smooth;
+  
+  /* 🛑 SOLUCIÓN CRÍTICA: Detener el scroll horizontal en Android */
+  overflow-x: hidden !important; 
+  width: 100%; /* Asegura que no se expanda */
 }
 
-/* ==============================
-    BODY / FONDO INICIO
-    ============================== */
 body {
   position: relative;
   min-height: 100vh;
@@ -56,8 +53,8 @@ body::before {
 }
 
 /* ==============================
-    HEADER / NAVBAR
-    ============================== */
+   HEADER / NAVBAR
+   ============================== */
 
 header {
   position: fixed;
@@ -86,26 +83,26 @@ nav a:focus {
   color: var(--accent) !important; 
   transform: translateY(-2px);
 }
+
 /* ==============================
-    SECCIONES: CONTENEDOR PRINCIPAL (Glassmorphism)
-    ============================== */
+   SECCIONES: CONTENEDOR PRINCIPAL (Mobile First)
+   ============================== */
 section {
+  width: 100%; /* Asegura que ocupe todo el ancho disponible */
   padding: 6rem 2rem;
   max-width: 1200px;
-  margin: 100px auto 0; 
+  margin: 100px auto 0; /* Margen superior fijo para el header */
   
-  /* Fondo semi-transparente para que se vea el body::before */
+  /* Estilos Glassmorphism */
   background-color: rgba(255, 255, 255, 0.1); 
   backdrop-filter: blur(5px);
   border-radius: 15px; 
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6); 
-  
-  /* Color del texto general (se sobrescribe por las secciones específicas) */
   color: var(--primary-light); 
 }
 
 h2, h3 {
-  color: var(--text-light); /* Títulos de sección en blanco para que destaquen mucho */
+  color: var(--text-light); 
   margin-bottom: 1rem;
   font-weight: 600;
   text-align: center;
@@ -116,46 +113,43 @@ p {
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 2rem;
-  color: var(--primary-light); /* Párrafos por defecto en morado/lila claro */
+  color: var(--primary-light); 
 }
 
 section a {
-    color: var(--secondary); /* Enlaces por defecto en rosa suave */
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
+  color: var(--secondary); 
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 section a:hover {
-    color: var(--accent); 
+  color: var(--accent); 
 }
 
 /* ==============================
-    AJUSTES ESPECÍFICOS PARA SECCIÓN #SOBREMI (ALTO CONTRASTE) 💡
-    ============================== */
+   ESTILOS ESPECÍFICOS DE SECCIONES
+   ============================== */
 
-/* Hacemos que el texto de párrafos en #sobremi sea blanco para máxima legibilidad */
 #intro p {
-    color: var(--text-light); /* <- ¡Blanco puro! */
-    text-shadow: 0 0 5px rgb(245, 217, 238); 
+  color: var(--text-light); 
+  text-shadow: 0 0 5px rgb(245, 217, 238); 
 }
 
-
-#intro  h2 {
-    color: var(--secondary); 
-    color: #c6b7eb;
+#intro h2 {
+  color: var(--secondary); 
+  color: #c6b7eb;
 }
 #intro h1{
-   color:#c2b8db;
-    margin-bottom: 2.5rem; 
-    font-size: 4rem; 
-    font-weight: 700;
+  color:#c2b8db;
+  margin-bottom: 2.5rem; 
+  font-size: 4rem; 
+  font-weight: 700;
 }
 
 #intro a:hover {
-    color: var(--primary-light); 
+  color: var(--primary-light); 
 }
-
 
 img {
   display: block;
@@ -163,135 +157,186 @@ img {
   width: 100%;
   max-width: 800px; 
   border-radius: 15px;
-  box-shadow: 0 6px 25px var(--shadow-light);
-  transform: none; /* Asegura que la imagen no esté torcida */
+  /* La variable shadow-light no existe, la elimino para evitar errores */
+  /* box-shadow: 0 6px 25px var(--shadow-light); */ 
+  transform: none; 
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 img:hover {
   transform: scale(1.02); 
-  box-shadow: 0 12px 35px var(--shadow-medium);
+  /* La variable shadow-medium no existe, la elimino para evitar errores */
+  /* box-shadow: 0 12px 35px var(--shadow-medium); */ 
 }
 
 #formation h2 {
-    color:#c6b7eb;
-    text-align: center;
-    margin-bottom: 2.5rem; 
-    font-size: 4rem; 
-    font-weight: 700;
+  color:#c6b7eb;
+  text-align: center;
+  margin-bottom: 2.5rem; 
+  font-size: 4rem; 
+  font-weight: 700;
 }
 
 #projects h1{
-   color:#c2b8db;
-    margin-bottom: 2.5rem; 
-    font-size: 4rem; 
-    font-weight: 700;
-    text-align: center;
+  color:#c2b8db;
+  margin-bottom: 2.5rem; 
+  font-size: 4rem; 
+  font-weight: 700;
+  text-align: center;
 }
 
-  
 #projects h2 {
-    color:#c6b7eb;
-    text-align: center;
-    margin-bottom: 1.5rem; 
-    font-size: 1.9rem; 
-    font-weight:100;
+  color:#c6b7eb;
+  text-align: center;
+  margin-bottom: 1.5rem; 
+  font-size: 1.9rem; 
+  font-weight:100;
 }
 #projects p {
   color: #000000;
   text-align: center;
   margin-bottom: 2rem;
-  font-size: 1.9rem; 
+  font-size: 1.1rem; /* Reduzco el tamaño, 1.9rem era demasiado grande */
   font-weight: 400; 
   letter-spacing: 0.3px; 
 }
 
 .project-card { 
-    background-color: var(--card-bg); 
-    border: 1px solid var(--card-border); 
-    border-radius: 15px;
-    padding: 2rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
+  background-color: var(--card-bg); 
+  border: 1px solid var(--card-border); 
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
 }
 
-
-
-
 .project-card .project-title-name { 
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--accent); 
-    margin-bottom: 0.5rem;
-    display: block; 
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent); 
+  margin-bottom: 0.5rem;
+  display: block; 
 }
 
 .project-card img {
-    max-width: 700px; 
-    margin-top: 2rem; 
-    border: 2px solid var(--primary-light); 
+  max-width: 700px; 
+  margin-top: 2rem; 
+  border: 2px solid var(--primary-light); 
 }
 
-
-
+/* Estilos de Footer */
 .footer-container {
-   
-    color: var(--text-light) !important; 
-    
-    
-    background-color: rgba(27, 27, 49, 0.8) !important; 
-    
-    
-    backdrop-filter: blur(4px) !important;
+  color: var(--text-light) !important; 
+  background-color: rgba(27, 27, 49, 0.8) !important; 
+  backdrop-filter: blur(4px) !important;
 }
 
 .footer-container p {
-    color: var(--text-light) !important; 
-    font-size: 0.95rem; 
+  color: var(--text-light) !important; 
+  font-size: 0.95rem; 
 }
 
-
 .footer-container a {
-    color: var(--accent) !important; 
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
+  color: var(--accent) !important; 
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
 }
 
 .footer-container a:hover {
-    color: var(--secondary) !important; 
-
-
-
+  color: var(--secondary) !important; 
 }
 
+
+/* ==============================
+   MEDIA QUERIES PARA ADAPTABILIDAD
+   ============================== */
+
+/* 1. TELÉFONOS (Hasta 768px) */
+@media (max-width: 768px) {
+    
+    /* TIPOGRAFÍA */
+    #intro h1 {
+        font-size: 2.5rem; /* Ajuste más pequeño */
+    }
+    
+    /* NAVEGACIÓN (Se apila verticalmente) */
+    nav {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    nav a {
+        margin: 0.5rem 0; 
+        width: 100%; 
+        text-align: center;
+    }
+    
+    /* SECCIONES (AJUSTE CLAVE) */
+    section {
+        padding: 4rem 1rem; /* Reduce el padding horizontal */
+        margin-top: 60px; /* Reduce el margen superior */
+        max-width: 100%; /* Asegura que no tenga un límite de ancho */
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    /* IMÁGENES */
+    img {
+        max-width: 95%; 
+    }
+    
+    /* TITULOS DE SECCIÓN */
+    #formation h2, #projects h1 {
+        font-size: 2rem;
+    }
+}
+
+/* 2. TABLETAS (Entre 769px y 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    
+    /* TIPOGRAFÍA */
+    #intro h1 {
+        font-size: 3rem;
+    }
+    
+    /* SECCIONES */
+    section {
+        padding: 6rem 3rem;
+    }
+    
+    /* NAVEGACIÓN */
+    nav {
+        justify-content: space-between;
+        padding: 1rem 2rem;
+    }
+}
+
+
+/* 3. ESCRITORIO (Más de 1025px) */
 @media (min-width: 1025px) {
     
-  
-    #inicio h1 {
+    /* TIPOGRAFÍA */
+    #intro h1 {
         font-size: 4rem;
     }
     
+    /* NAVEGACIÓN */
     nav {
         justify-content: space-around;
         padding: 1.5rem 4rem;
     }
     
-    
-    .grid-proyectos {
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 30px;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-    
+    /* SECCIONES */
     section {
         padding: 8rem 4rem;
+        max-width: 1200px;
+        margin: 100px auto 0; 
     }
 }
