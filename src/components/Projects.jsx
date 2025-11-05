@@ -4,7 +4,9 @@ import Carousel from 'react-bootstrap/Carousel';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
+// =========================================================================
+// 1. IMPORTACIONES Y DATOS DE PROYECTOS
+// =========================================================================
 import MundoArcaneImg from '/images/arcane.png';
 import TurismoVenezuelaImg from '/images/venezuela.png';
 import BancoShot1 from '/images/banco.png';
@@ -37,7 +39,7 @@ const proyectos = [
 ];
 
 // =========================================================================
-// 2. CARRUSEL CON SOLUCIÓN MOBILE (USANDO maxHeight)
+// 2. CARRUSEL CON IMÁGENES MÁS GRANDES Y SIN FONDO NEGRO
 // =========================================================================
 const BootstrapProjectCarousel = ({ images }) => {
   return (
@@ -46,13 +48,11 @@ const BootstrapProjectCarousel = ({ images }) => {
         {images.map((imgSrc, index) => (
           <Carousel.Item key={index}>
             <img
-              className="d-block w-100"
-              src={imgSrc}
+              className= "d-block w-100" 
               alt={`Captura ${index + 1}`}
               style={{
-                
                 maxHeight: "22rem",
-                height: "auto", 
+                height: "auto",
                 objectFit: "contain", 
                 backgroundColor: "transparent",
               }}
@@ -65,7 +65,7 @@ const BootstrapProjectCarousel = ({ images }) => {
 };
 
 // =========================================================================
-// 3. COMPONENTE PRINCIPAL: PROJECTS (CON SOLUCIÓN MOBILE)
+// 3. COMPONENTE PRINCIPAL: PROJECTS
 // =========================================================================
 export default function Projects() {
   return (
@@ -98,8 +98,7 @@ export default function Projects() {
                 rel="noopener noreferrer"
                 aria-label={`Ver demo de ${p.title}`}
                 className="block flex justify-center items-center bg-transparent"
-                
-                style={{ minHeight: "22rem", maxHeight: "22rem" }} 
+                style={{ height: "22rem" }}
               >
                 <img
                   src={p.image}
@@ -113,19 +112,17 @@ export default function Projects() {
             ) : p.captures ? (
               <BootstrapProjectCarousel images={p.captures} />
             ) : (
-              <div 
-                className="flex justify-center items-center bg-transparent" 
-                style={{ minHeight: "22rem", maxHeight: "22rem" }}
-              >
+              <div className="flex justify-center items-center bg-transparent" style={{ height: "22rem" }}>
                 <img
                   src={p.image}
+
                   className="max-h-full max-w-full"
                   style={{ objectFit: "contain" }}
                 />
               </div>
             )}
 
-            
+            {/* CONTENIDO */}
             <div className="p-5 flex flex-col flex-grow">
               <h3 className="text-xl font-semibold text-violet-600 mb-2">
                 {p.title}
