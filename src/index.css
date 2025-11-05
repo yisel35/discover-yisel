@@ -270,33 +270,24 @@ img:hover {
 
 
 }
-.carrusel-slide {
-  
-    width: 100vw; 
-}
 
-.carrusel-slide img {
-    max-width: 100%;
-    height: auto;
-}
 @media (min-width: 1025px) {
     
-    /* TIPOGRAFÍA: Tamaño grande para pantallas amplias. */
+  
     #inicio h1 {
         font-size: 4rem;
     }
     
-    /* NAVEGACIÓN: Horizontal y con buen espaciado. */
     nav {
         justify-content: space-around;
         padding: 1.5rem 4rem;
     }
     
-    /* GRID: Tres columnas (según tu código React) o más. */
+    
     .grid-proyectos {
         grid-template-columns: 1fr 1fr 1fr;
         gap: 30px;
-        max-width: 1200px; /* Limita el ancho en monitores muy grandes */
+        max-width: 1200px;
         margin: 0 auto;
     }
     

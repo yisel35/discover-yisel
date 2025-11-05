@@ -39,20 +39,24 @@ const proyectos = [
 ];
 
 // =========================================================================
-// 2. CARRUSEL CON IMÁGENES MÁS GRANDES Y SIN FONDO NEGRO
+// 2. CARRUSEL CON IMÁGENES MÁS GRANDES Y SIN FONDO NEGRO (CORREGIDO)
 // =========================================================================
 const BootstrapProjectCarousel = ({ images }) => {
   return (
-    <div className="w-full overflow-hidden rounded-t-2xl flex items-center justify-center bg-transparent">
+    // 🛑 SOLUCIÓN: Usamos una clase de Tailwind para definir la altura fija del contenedor.
+    // h-[22rem] = 352px. Asegúrate de que esta clase esté configurada en tu tailwind.config.js
+    <div className="w-full overflow-hidden rounded-t-2xl flex items-center justify-center bg-transparent h-[22rem]">
       <Carousel data-bs-theme="dark" interval={null} controls={images.length > 1} indicators={false}>
         {images.map((imgSrc, index) => (
           <Carousel.Item key={index}>
             <img
-              className= "d-block w-100" 
+              // 🛑 CORRECCIÓN 1: Se agregó la propiedad 'src'.
+              src={imgSrc} 
+              className="d-block w-100" 
               alt={`Captura ${index + 1}`}
               style={{
-                maxHeight: "22rem",
-                height: "auto",
+                // 🛑 CORRECCIÓN 2: Usamos height: '100%' para heredar la altura del padre.
+                height: "100%", 
                 objectFit: "contain", 
                 backgroundColor: "transparent",
               }}
@@ -98,7 +102,8 @@ export default function Projects() {
                 rel="noopener noreferrer"
                 aria-label={`Ver demo de ${p.title}`}
                 className="block flex justify-center items-center bg-transparent"
-                style={{ height: "22rem" }}
+                // 🛑 AJUSTE: Usamos min/maxHeight para los contenedores estáticos.
+                style={{ minHeight: "22rem", maxHeight: "22rem" }} 
               >
                 <img
                   src={p.image}
@@ -112,10 +117,13 @@ export default function Projects() {
             ) : p.captures ? (
               <BootstrapProjectCarousel images={p.captures} />
             ) : (
-              <div className="flex justify-center items-center bg-transparent" style={{ height: "22rem" }}>
+              <div 
+                className="flex justify-center items-center bg-transparent" 
+                // 🛑 AJUSTE: Usamos min/maxHeight para los contenedores estáticos.
+                style={{ minHeight: "22rem", maxHeight: "22rem" }}
+              >
                 <img
                   src={p.image}
-
                   className="max-h-full max-w-full"
                   style={{ objectFit: "contain" }}
                 />
