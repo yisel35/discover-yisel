@@ -25,9 +25,9 @@ html, body {
   color: var(--text-light); 
   scroll-behavior: smooth;
   
-  /* 🛑 SOLUCIÓN CRÍTICA: Detener el scroll horizontal en Android */
+  
   overflow-x: hidden !important; 
-  width: 100%; /* Asegura que no se expanda */
+  width: 100%; 
 }
 
 body {
@@ -65,7 +65,7 @@ header {
   justify-content: center;
   align-items: center;
   z-index: 100;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); 
+  background-color: var(--primary); 
 }
 .logo {
   color: #c6b7eb;
@@ -75,7 +75,7 @@ nav a {
   margin: 0 1.5rem;
   text-decoration: none;
   font-weight: 600;
-  color: aliceblue;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
 nav a:hover,
@@ -84,16 +84,14 @@ nav a:focus {
   transform: translateY(-2px);
 }
 
-/* ==============================
-   SECCIONES: CONTENEDOR PRINCIPAL (Mobile First)
-   ============================== */
+
 section {
-  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+  width: 100%; 
   padding: 6rem 2rem;
   max-width: 1200px;
-  margin: 100px auto 0; /* Margen superior fijo para el header */
+  margin: 100px auto 0; 
   
-  /* Estilos Glassmorphism */
+ 
   background-color: rgba(255, 255, 255, 0.1); 
   backdrop-filter: blur(5px);
   border-radius: 15px; 
@@ -127,9 +125,7 @@ section a:hover {
   color: var(--accent); 
 }
 
-/* ==============================
-   ESTILOS ESPECÍFICOS DE SECCIONES
-   ============================== */
+
 
 #intro p {
   color: var(--text-light); 
@@ -157,16 +153,14 @@ img {
   width: 100%;
   max-width: 800px; 
   border-radius: 15px;
-  /* La variable shadow-light no existe, la elimino para evitar errores */
-  /* box-shadow: 0 6px 25px var(--shadow-light); */ 
+
   transform: none; 
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 img:hover {
   transform: scale(1.02); 
-  /* La variable shadow-medium no existe, la elimino para evitar errores */
-  /* box-shadow: 0 12px 35px var(--shadow-medium); */ 
+ / 
 }
 
 #formation h2 {
@@ -196,7 +190,7 @@ img:hover {
   color: #000000;
   text-align: center;
   margin-bottom: 2rem;
-  font-size: 1.1rem; /* Reduzco el tamaño, 1.9rem era demasiado grande */
+  font-size: 1.1rem; 
   font-weight: 400; 
   letter-spacing: 0.3px; 
 }
@@ -230,7 +224,7 @@ img:hover {
   border: 2px solid var(--primary-light); 
 }
 
-/* Estilos de Footer */
+
 .footer-container {
   color: var(--text-light) !important; 
   background-color: rgba(27, 27, 49, 0.8) !important; 
@@ -254,19 +248,14 @@ img:hover {
 }
 
 
-/* ==============================
-   MEDIA QUERIES PARA ADAPTABILIDAD
-   ============================== */
 
-/* 1. TELÉFONOS (Hasta 768px) */
+
 @media (max-width: 768px) {
-    
-    /* TIPOGRAFÍA */
+   
     #intro h1 {
-        font-size: 2.5rem; /* Ajuste más pequeño */
+        font-size: 2.5rem; 
     }
     
-    /* NAVEGACIÓN (Se apila verticalmente) */
     nav {
         flex-direction: column; 
         align-items: center; 
@@ -278,40 +267,36 @@ img:hover {
         text-align: center;
     }
     
-    /* SECCIONES (AJUSTE CLAVE) */
+    
     section {
-        padding: 4rem 1rem; /* Reduce el padding horizontal */
-        margin-top: 60px; /* Reduce el margen superior */
-        max-width: 100%; /* Asegura que no tenga un límite de ancho */
+        padding: 4rem 1rem; 
+        margin-top: 60px; 
+        max-width: 100%; 
         margin-left: 0;
         margin-right: 0;
     }
     
-    /* IMÁGENES */
     img {
         max-width: 95%; 
     }
     
-    /* TITULOS DE SECCIÓN */
+  
     #formation h2, #projects h1 {
         font-size: 2rem;
     }
 }
 
-/* 2. TABLETAS (Entre 769px y 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
     
-    /* TIPOGRAFÍA */
+    
     #intro h1 {
         font-size: 3rem;
     }
-    
-    /* SECCIONES */
+   
     section {
         padding: 6rem 3rem;
     }
     
-    /* NAVEGACIÓN */
     nav {
         justify-content: space-between;
         padding: 1rem 2rem;
@@ -319,21 +304,20 @@ img:hover {
 }
 
 
-/* 3. ESCRITORIO (Más de 1025px) */
+
 @media (min-width: 1025px) {
     
-    /* TIPOGRAFÍA */
+  
     #intro h1 {
         font-size: 4rem;
     }
     
-    /* NAVEGACIÓN */
+  
     nav {
         justify-content: space-around;
         padding: 1.5rem 4rem;
     }
     
-    /* SECCIONES */
     section {
         padding: 8rem 4rem;
         max-width: 1200px;
