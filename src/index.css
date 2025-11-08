@@ -65,7 +65,8 @@ header {
   justify-content: center;
   align-items: center;
   z-index: 100;
-  background-color: var(--primary); 
+  background: linear-gradient(90deg, #6c6672, #898794);
+ 
 }
 .logo {
   color: #c6b7eb;
