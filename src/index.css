@@ -311,7 +311,7 @@ img:hover {
 
     .navbar-collapse .nav-links {
         display: flex;
-        flex-direction: column; /
+        flex-direction: column; 
         width: 100%;
         text-align: center;
     }
