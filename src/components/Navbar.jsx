@@ -18,12 +18,7 @@ export default function MyImpactfulNavbar() {
         
          <h1>🚀Kimberlyn M. | Mi viaje creativo🌍</h1>
         </Navbar.Brand>
-        <Nav className="nav-links ms-auto" activeKey="#home">
-          
-          <Nav.Item>
-            <Nav.Link href="#intro">Inicio</Nav.Link> 
-          </Nav.Item>
-
+        <Nav className="nav-links ms-auto" activeKey="#intro">
           <Nav.Item>
             <Nav.Link href="#formation">Formación</Nav.Link>
           </Nav.Item>
