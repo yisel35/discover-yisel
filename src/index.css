@@ -304,6 +304,8 @@ img:hover {
         max-width: 70%; /* Le da espacio para el botón de hamburguesa */
         line-height: 1.2;
         padding-right: 1rem;
+         text-align: center;
+        
     }
 
     /* Estilos del Menú Desplegable (Navbar.Collapse) */
