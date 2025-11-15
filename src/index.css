@@ -1,32 +1,35 @@
-:root {
-  --primary: #6b5b95; 
-  --primary-light: #000000; 
-  --secondary: #f7cac9; 
-  --accent: #ffb347; 
+::root {
+  --primary: #6b5b95;
+  --primary-light: #000000;
+  --secondary: #f7cac9;
+  --accent: #ffb347;
   --background: #fefefe;
   --text-dark: #1a1a1a;
   --text-light: #ffffff;
-  --card-bg: rgba(255, 255, 255, 0.08); 
+
+  /* AJUSTE PARA EL CARD (como en la imagen 2): Oscuro, semitransparente, para que el GLOW resalte */
+  --card-bg: rgba(20, 0, 40, 0.85); /* Fondo muy oscuro y un poco más opaco */
   --card-border: rgba(255, 255, 255, 0.1);
 }
 
 
 /* ==============================
-   RESET Y ESTILOS BASE
-   ============================== */
+   RESET Y ESTILOS BASE
+   ============================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
-  font-family: var(--font-primary); /* Asumiendo que var(--font-primary) está definido en otro lugar */
-  color: var(--text-light); 
+  font-family: var(--font-primary);
+  color: var(--text-light);
   scroll-behavior: smooth;
-  overflow-x: hidden !important; 
-  width: 100%; 
+  overflow-x: hidden !important;
+  width: 100%;
 }
 
 body {
@@ -36,7 +39,7 @@ body {
   flex-direction: column;
 }
 
-/* Imagen de fondo */
+/* Imagen de fondo (Mantenido el filtro oscuro) */
 body::before {
   content: "";
   position: fixed;
@@ -44,11 +47,11 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/images/programacion.png'); 
+  background-image: url('/images/programacion.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  filter: brightness(0.5); 
+  filter: brightness(0.5);
   z-index: -1;
 }
 
@@ -66,78 +69,93 @@ header {
 
 
 /* =================================
-   ESTILOS DE LA BARRA DE NAVEGACIÓN (GENERAL / DESKTOP)
-   ================================= */
+   ESTILOS DE LA BARRA DE NAVEGACIÓN
+   ================================= */
 
 .navbar-glass {
-  background-color: rgba(23, 1, 44, 0.90) !important; 
-  backdrop-filter: none; 
-  -webkit-backdrop-filter: none; 
-  box-shadow: 
-    0 4px 12px rgba(111, 63, 150, 0.5), 
-    0 0 20px rgba(78, 68, 104, 0.2); 
-  border-bottom: 1px solid rgba(211, 205, 226, 0.1); 
-  padding: 1rem 0 !important; /* Importante para el padding vertical en desktop */
+  background-color: rgba(23, 1, 44, 0.90) !important;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow:
+    0 4px 12px rgba(111, 63, 150, 0.5),
+    0 0 20px rgba(78, 68, 104, 0.2);
+  border-bottom: 1px solid rgba(211, 205, 226, 0.1);
+  padding: 1rem 0 !important;
 }
 
 /* LOGO: Estilo base (Desktop) */
 .logo h1 {
-  /* AJUSTADO: Más manejable que 2.5rem en desktop para evitar desbordamiento */
-  font-size: 1.8rem; 
-  color: #f7f7f7; 
-  letter-spacing: 0.05em; 
+  font-size: 1.8rem;
+  color: #f7f7f7;
+  letter-spacing: 0.05em;
   font-weight: 400;
   text-transform: uppercase;
-  text-shadow: 
-    2px 2px 4px rgba(177, 9, 9, 0.4), 
-    0px 0px 10px rgba(253, 252, 253, 0.3); 
-  /* Asegura que el logo se mantenga en una línea en desktop */
+  text-shadow:
+    2px 2px 4px rgba(177, 9, 9, 0.4),
+    0px 0px 10px rgba(253, 252, 253, 0.3);
   white-space: nowrap;
 }
 
 /* Enlaces de navegación (Desktop) */
 .navbar-glass .nav-links a {
-    color: rgb(255, 255, 255) !important; 
-    margin: 0 1.5rem;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease, transform 0.2s ease;
+  color: rgb(255, 255, 255) !important;
+  margin: 0 1.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .navbar-glass .nav-links a:hover,
 .navbar-glass .nav-links a:focus {
-    color: #fdfdfd !important; 
-    transform: translateY(-2px);
+  color: #fdfdfd !important;
+  transform: translateY(-2px);
 }
 
 /* Estilo del botón de hamburguesa de Bootstrap */
 .navbar-toggler {
-    /* Define un borde para el botón de hamburguesa */
-    border-color: rgba(255, 255, 255, 0.5) !important;
+  border-color: rgba(255, 255, 255, 0.5);
 }
+
 .navbar-toggler-icon {
-    
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
 
 /* =================================
-   ESTILOS DE SECCIONES (INTRO, FORMATION, PROJECTS)
-   ================================= */
+   ESTILOS DE SECCIONES (INTRO, FORMATION, PROJECTS)
+   ESTILO PARA EL CUADRO DE RESPLANDOR (SECTION)
+   ================================= */
 
 section {
-  width: 100%; 
+  width: 100%;
   padding: 6rem 2rem;
   max-width: 1200px;
-  margin: 100px auto 0; 
-  background-color: rgba(255, 255, 255, 0.1); 
-  backdrop-filter: blur(5px);
-  border-radius: 15px; 
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6); 
-  color: var(--primary-light); 
+  margin: 100px auto 0;
+
+  /* Propiedades Glassmorphism/Card */
+  background-color: var(--card-bg); /* Fondo oscuro semitransparente */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  
+  /* ESQUINAS REDONDEADAS COMO LA IMAGEN */
+  border-radius: 40px; 
+  
+  /* BORDE DE LUZ NEÓN MORADO/BLANCO */
+  border: 1px solid rgba(185, 66, 253, 0.3); /* Borde blanco sutil interno */
+  
+  box-shadow:
+    /* Sombra principal de profundidad */
+    0 8px 30px rgba(231, 229, 229, 0.8),
+    /* Resplandor blanco (interior y exterior suave) */
+    0 0 20px 0px rgba(145, 126, 230, 0.3), 
+    /* Resplandor Morado/Neón fuerte */
+    0 0 60px 5px rgb(141, 114, 209); 
+
+  color: var(--text-light);
 }
 
-h2, h3 {
-  color: var(--text-light); 
+h2,
+h3 {
+  color: var(--text-light);
   margin-bottom: 1rem;
   font-weight: 600;
   text-align: center;
@@ -148,93 +166,93 @@ p {
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 2rem;
-  color: var(--primary-light); 
+  color: var(--text-light);
 }
 
 section a {
-  color: var(--secondary); 
+  color: var(--secondary);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 section a:hover {
-  color: var(--accent); 
+  color: var(--accent);
 }
 
-/* Estilos específicos de #intro */
+
 #intro p {
-  color: var(--text-light); 
-  text-shadow: 0 0 5px rgb(245, 217, 238); 
+  color:#d2d0d6;
+  
 }
 
 #intro h2 {
-  color: var(--secondary); 
+  color: var(--secondary);
   color: #c6b7eb;
 }
 
-#intro h1{
-  color:#c2b8db;
-  margin-bottom: 2.5rem; 
-  font-size: 4rem; 
+#intro h1 {
+  color: #c2b8db;
+  margin-bottom: 2.5rem;
+  font-size: 4rem;
   font-weight: 700;
 }
 
 #intro a:hover {
-  color: var(--primary-light); 
+  color: var(--primary-light);
 }
 
 img {
   display: block;
   margin: 2rem auto;
   width: 100%;
-  max-width: 800px; 
+  max-width: 800px;
   border-radius: 15px;
-  transform: none; 
+  transform: none;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 img:hover {
-  transform: scale(1.02); 
+  transform: scale(1.02);
 }
 
-/* Estilos específicos de #formation */
+
 #formation h2 {
-  color:#c6b7eb;
+  color: #c6b7eb;
   text-align: center;
-  margin-bottom: 2.5rem; 
-  font-size: 4rem; 
+  margin-bottom: 2.5rem;
+  font-size: 4rem;
   font-weight: 700;
 }
 
-/* Estilos específicos de #projects */
-#projects h1{
-  color:#c2b8db;
-  margin-bottom: 2.5rem; 
-  font-size: 4rem; 
+#projects h1 {
+  color: #c2b8db;
+  margin-bottom: 2.5rem;
+  font-size: 4rem;
   font-weight: 700;
   text-align: center;
 }
 
 #projects h2 {
-  color:#c6b7eb;
+  color: #c6b7eb;
   text-align: center;
-  margin-bottom: 1.5rem; 
-  font-size: 1.9rem; 
-  font-weight:100;
+  margin-bottom: 1.5rem;
+  font-size: 1.9rem;
+  font-weight: 100;
 }
+
 #projects p {
-  color: #000000;
+  color: var(--text-light);
   text-align: center;
   margin-bottom: 2rem;
   font-size: 1.1rem;
-  font-weight: 400; 
-  letter-spacing: 0.3px; 
+  font-weight: 400;
+  letter-spacing: 0.3px;
 }
 
-.project-card { 
-  background-color: var(--card-bg); 
-  border: 1px solid var(--card-border); 
+.project-card {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--card-border);
   border-radius: 15px;
   padding: 2rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
@@ -247,41 +265,41 @@ img:hover {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
 }
 
-.project-card .project-title-name { 
+.project-card .project-title-name {
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--accent); 
+  color: var(--accent);
   margin-bottom: 0.5rem;
-  display: block; 
+  display: block;
 }
 
 .project-card img {
-  max-width: 700px; 
-  margin-top: 2rem; 
-  border: 2px solid var(--primary-light); 
+  max-width: 700px;
+  margin-top: 2rem;
+  border: 2px solid var(--primary-light);
 }
 
 /* Estilos de Footer */
 .footer-container {
-  color: var(--text-light) !important; 
-  background-color: rgba(27, 27, 49, 0.8) !important; 
+  color: var(--text-light) !important;
+  background-color: rgba(27, 27, 49, 0.8) !important;
   backdrop-filter: blur(4px) !important;
 }
 
 .footer-container p {
-  color: var(--text-light) !important; 
-  font-size: 0.95rem; 
+  color:white;
+  font-size: 0.95rem;
 }
 
 .footer-container a {
-  color: var(--accent) !important; 
+  color: wheat;
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s ease;
 }
 
 .footer-container a:hover {
-  color: var(--secondary) !important; 
+  color: rgb(250, 249, 250);
 }
 
 
@@ -291,86 +309,87 @@ img:hover {
 
 
 @media (max-width: 991.98px) {
-    
-  
-    .logo h1 {
-        font-size: 1.4rem; 
-        white-space: nowrap;
-        text-align: left;
-    }
-
-    .navbar-collapse {
-        
-        background-color: rgba(23, 1, 44, 0.95); 
-        border-top: 1px solid rgba(211, 205, 226, 0.1);
-        padding-bottom: 10px;
-       
-        margin-top: 10px; 
-    }
 
 
-    .navbar-collapse .nav-links {
-        display: flex;
-        flex-direction: column; 
-        width: 100%;
-        text-align: center;
-    }
+  .logo h1 {
+    font-size: 1.4rem;
+    white-space: nowrap;
+    text-align: left;
+  }
 
-    
-    .navbar-collapse .nav-links .nav-link {
-        color: var(--text-light) !important;
-        text-align: center;
-        padding: 0.75rem 1rem !important;
-        font-size: 1rem;
-        margin: 0 auto;
-        transition: background-color 0.3s ease;
-    }
-    
-    .navbar-collapse .nav-links .nav-link:hover {
-        background-color: rgba(107, 91, 149, 0.2); 
-        transform: none; 
-    }
+  .navbar-collapse {
+    background-color: rgba(23, 1, 44, 0.95);
+    border-top: 1px solid rgba(211, 205, 226, 0.1);
+    padding-bottom: 10px;
+    margin-top: 10px;
+  }
 
-    /* Ajuste de padding de la sección en tablets */
-    section {
-        padding: 3rem 1.5rem; 
-        margin-top: 80px auto 0;
-    }
+
+  .navbar-collapse .nav-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+
+  .navbar-collapse .nav-links .nav-link {
+    color: var(--text-light) !important;
+    text-align: center;
+    padding: 0.75rem 1rem !important;
+    font-size: 1rem;
+    margin: 0 auto;
+    transition: background-color 0.3s ease;
+  }
+
+  .navbar-collapse .nav-links .nav-link:hover {
+    background-color: rgba(107, 91, 149, 0.2);
+    transform: none;
+  }
+
+  /* Ajuste de padding de la sección en tablets */
+  section {
+    padding: 3rem 1.5rem;
+    margin-top: 80px auto 0;
+    border-radius: 30px;
+  }
 }
 
 
 /* MÓVILES EXTREMOS (max-width: 480px) */
 @media (max-width: 480px) {
-    
-    .logo h1 {
-        font-size: 1.2rem;
-        white-space: normal;
-        line-height: 1.2;
-    }
 
-    section {
-        padding: 2rem 0.5rem; 
-        margin-top: 70px auto 0;
-    }
+  .logo h1 {
+    font-size: 1.2rem;
+    white-space: normal;
+    line-height: 1.2;
+  }
 
-    
-    #intro h1 {
-        font-size: 2.5rem; 
-    }
-    
-    #formation h2, #projects h1 {
-        font-size: 2rem;
-    }
-    
-    #projects h2 {
-        font-size: 1.4rem;
-    }
-    
-    p {
-        font-size: 1rem;
-    }
+  section {
+    padding: 2rem 0.5rem;
+    margin-top: 70px auto 0;
+    border-radius: 20px;
+  }
 
-    .project-card {
-        padding: 1rem;
-    }
+
+  #intro h1 {
+    font-size: 2.5rem;
+  }
+
+  #formation h2,
+  #projects h1 {
+    font-size: 2rem;
+  }
+
+  #projects h2 {
+    font-size: 1.4rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .project-card {
+    padding: 1rem;
+  }
 }

@@ -58,7 +58,7 @@ export default function Intro() {
       <span className="text-violet-600 font-semibold"></span>desarrolladora web en formación con una fuerte orientación al diseño visual y la experiencia del usuario. Me motiva crear productos digitales que combinen estética, funcionalidad y usabilidad, aportando soluciones que generen impacto real.
       </motion.p>
 
-      {/* Párrafo 2 */}
+      
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -68,7 +68,7 @@ export default function Intro() {
         Cuento con conocimientos en <span className="text-violet-600 font-medium">HTML, CSS, JavaScript, React y SASS</span>, y actualmente profundizo en animaciones con <span className="font-medium">Framer Motion</span> y en la construcción de interfaces modernas y responsivas. Me interesa seguir ampliando mis habilidades en frameworks y herramientas que potencien el desarrollo frontend.
       </motion.p>
 
-      {/* Párrafo 3 */}
+      
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     
     <footer className="footer-container py-6 text-center mt-10 shadow-2xl"> 
-      <p className="text-sm">
+      <p>
         © {new Date().getFullYear()} <span className="font-semibold">Kimberlyn Martínez</span> — 
         Desarrolladora Web en formación 💻
       </p>
