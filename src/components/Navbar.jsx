@@ -15,7 +15,7 @@ export default function MyImpactfulNavbar() {
  <Navbar.Brand 
  className="logo" 
  >
-<h1>🚀Kimberlyn M. | Mi viaje creativo🌍</h1>
+<h1>🚀Mi viaje creativo🌍</h1>
  </Navbar.Brand>
         
         {/* 2. BOTÓN DE HAMBURGUESA (Navbar.Toggle) */}
