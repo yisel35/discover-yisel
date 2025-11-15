@@ -325,3 +325,20 @@ img:hover {
         font-size: 1.75rem !important;
     }
 }
+/* Esto aplica solo en móviles, cuando el menú se ha colapsado */
+@media (max-width: 991.98px) {
+    
+    .navbar-collapse {
+        background-color: #1E003C; /* Fondo sólido para que el menú sea legible */
+        padding: 1rem;
+        margin-top: 0.5rem;
+        border-radius: 0.5rem;
+    }
+    
+    .navbar-collapse .nav-link {
+        font-size: 1.1rem; /* El texto de los enlaces un poco más grande y claro */
+        color: #c6b7eb !important; /* Asegura un color claro para la legibilidad */
+        padding: 0.5rem 0; /* Espaciado entre los enlaces */
+        text-align: left; /* Alinea los enlaces a la izquierda en el menú desplegado */
+    }
+}
