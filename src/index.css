@@ -310,33 +310,48 @@ img:hover {
 
 
 
-/* ================================
-   📱 MOVIL 360px – 480px
-   ================================ */
+/* =======================================
+   📱 MÓVILES: TODO MÁS PEQUEÑO Y CENTRADO
+   ======================================= */
 @media (max-width: 480px) {
 
+    /* NAVBAR más delgada */
     .navbar-glass {
-        padding: 0.3rem 0.7rem !important;
-        min-height: 45px !important;
+        padding: 0.3rem 0.6rem !important;
+        text-align: center;
     }
 
-    /* LOGO más pequeño en una línea */
+    /* LOGO centrado y más pequeño */
     .logo h1 {
         font-size: 1.2rem !important;
-        white-space: nowrap !important;
+        text-align: center !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+        display: block !important;
     }
 
-    /* Links alineados a la derecha */
+    /* Enlaces centrados y más pequeños */
     .nav-links {
-        margin-left: auto !important;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 0.5rem !important;
     }
 
     .nav-links .nav-link {
-        font-size: 0.75rem !important;
-        padding: 0.2rem 0.5rem !important;
+        font-size: 0.8rem !important;
+        padding: 0.3rem 0.5rem !important;
+        text-align: center !important;
+    }
+
+    /* Dropdown adaptado al centro */
+    .dropdown-menu {
+        text-align: center !important;
+        width: 100% !important;
     }
 }
-
 
 
 /* ================================
