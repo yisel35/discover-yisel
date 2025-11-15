@@ -12,7 +12,7 @@
 
 
 /* ==============================
-   RESET, FIX DE ANDROID Y ESTILOS BASE
+   RESET Y ESTILOS BASE
    ============================== */
 * {
   margin: 0;
@@ -22,11 +22,9 @@
 
 html, body {
   height: 100%;
-  font-family: var(--font-primary);
+  font-family: var(--font-primary); /* Asumiendo que var(--font-primary) está definido en otro lugar */
   color: var(--text-light); 
   scroll-behavior: smooth;
-  
-  
   overflow-x: hidden !important; 
   width: 100%; 
 }
@@ -38,6 +36,7 @@ body {
   flex-direction: column;
 }
 
+/* Imagen de fondo */
 body::before {
   content: "";
   position: fixed;
@@ -53,7 +52,7 @@ body::before {
   z-index: -1;
 }
 
-
+/* Contenedor principal de la barra de navegación */
 header {
   position: fixed;
   top: 0;
@@ -63,11 +62,41 @@ header {
   justify-content: center;
   align-items: center;
   z-index: 100;
-
 }
 
+
+/* =================================
+   ESTILOS DE LA BARRA DE NAVEGACIÓN (GENERAL / DESKTOP)
+   ================================= */
+
+.navbar-glass {
+  background-color: rgba(23, 1, 44, 0.90) !important; 
+  backdrop-filter: none; 
+  -webkit-backdrop-filter: none; 
+  box-shadow: 
+    0 4px 12px rgba(111, 63, 150, 0.5), 
+    0 0 20px rgba(78, 68, 104, 0.2); 
+  border-bottom: 1px solid rgba(211, 205, 226, 0.1); 
+  padding: 1rem 0 !important; /* Importante para el padding vertical en desktop */
+}
+
+/* LOGO: Estilo base (Desktop) */
+.logo h1 {
+  /* AJUSTADO: Más manejable que 2.5rem en desktop para evitar desbordamiento */
+  font-size: 1.8rem; 
+  color: #f7f7f7; 
+  letter-spacing: 0.05em; 
+  font-weight: 400;
+  text-transform: uppercase;
+  text-shadow: 
+    2px 2px 4px rgba(177, 9, 9, 0.4), 
+    0px 0px 10px rgba(253, 252, 253, 0.3); 
+  /* Asegura que el logo se mantenga en una línea en desktop */
+  white-space: nowrap;
+}
+
+/* Enlaces de navegación (Desktop) */
 .navbar-glass .nav-links a {
-    /* Color base de los enlaces */
     color: rgb(255, 255, 255) !important; 
     margin: 0 1.5rem;
     text-decoration: none;
@@ -77,44 +106,29 @@ header {
 
 .navbar-glass .nav-links a:hover,
 .navbar-glass .nav-links a:focus {
-   
     color: #fdfdfd !important; 
     transform: translateY(-2px);
 }
 
-/* Mantén tu logo */
-.logo h1 {
-  font-size: 2.5rem;
-  color: #f7f7f7; 
-  letter-spacing: 0.05em; 
-  font-weight: 400;
-  text-transform: uppercase;
-  text-shadow: 
-    2px 2px 4px rgba(177, 9, 9, 0.4), 
-    0px 0px 10px rgba(253, 252, 253, 0.3); 
-  
+/* Estilo del botón de hamburguesa de Bootstrap */
+.navbar-toggler {
+    /* Define un borde para el botón de hamburguesa */
+    border-color: rgba(255, 255, 255, 0.5) !important;
 }
-.navbar-glass {
-
-  background-color: rgba(23, 1, 44, 0.90); 
-  backdrop-filter: none; 
-  -webkit-backdrop-filter: none; 
-  box-shadow: 
-    0 4px 12px rgba(111, 63, 150, 0.5), 
-    0 0 20px rgba(78, 68, 104, 0.2); 
-
-
-  border-bottom: 1px solid rgba(211, 205, 226, 0.1); 
-  padding: 1rem 0;
+.navbar-toggler-icon {
+    
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
+
+/* =================================
+   ESTILOS DE SECCIONES (INTRO, FORMATION, PROJECTS)
+   ================================= */
 
 section {
   width: 100%; 
   padding: 6rem 2rem;
   max-width: 1200px;
   margin: 100px auto 0; 
-  
- 
   background-color: rgba(255, 255, 255, 0.1); 
   backdrop-filter: blur(5px);
   border-radius: 15px; 
@@ -148,8 +162,7 @@ section a:hover {
   color: var(--accent); 
 }
 
-
-
+/* Estilos específicos de #intro */
 #intro p {
   color: var(--text-light); 
   text-shadow: 0 0 5px rgb(245, 217, 238); 
@@ -159,6 +172,7 @@ section a:hover {
   color: var(--secondary); 
   color: #c6b7eb;
 }
+
 #intro h1{
   color:#c2b8db;
   margin-bottom: 2.5rem; 
@@ -182,10 +196,9 @@ img {
 
 img:hover {
   transform: scale(1.02); 
-  /* La variable shadow-medium no existe, la elimino para evitar errores */
-  /* box-shadow: 0 12px 35px var(--shadow-medium); */ 
 }
 
+/* Estilos específicos de #formation */
 #formation h2 {
   color:#c6b7eb;
   text-align: center;
@@ -194,6 +207,7 @@ img:hover {
   font-weight: 700;
 }
 
+/* Estilos específicos de #projects */
 #projects h1{
   color:#c2b8db;
   margin-bottom: 2.5rem; 
@@ -213,7 +227,7 @@ img:hover {
   color: #000000;
   text-align: center;
   margin-bottom: 2rem;
-  font-size: 1.1rem; /* Reduzco el tamaño, 1.9rem era demasiado grande */
+  font-size: 1.1rem;
   font-weight: 400; 
   letter-spacing: 0.3px; 
 }
@@ -272,114 +286,91 @@ img:hover {
 
 
 /* ================================================= */
-/* 1. MÓVILES Y PANTALLAS PEQUEÑAS (HASTA 768PX)    */
+/* 4. MEDIA QUERIES (RESPONSIVE)    */
 /* ================================================= */
-/* ==========================
-   NAVBAR RESPONSIVE OPTIMIZADA
-   ========================== */
 
-/* ================================
-   NAVBAR DELGADA — LIMPIA — ACOMODADA
-   ================================ */
 
-/* GENERAL: Desktop */
-.navbar-glass {
-    background: rgba(30, 0, 60, 0.7);
-    backdrop-filter: blur(10px);
-    padding: 0.5rem 0.5rem !important;
-}
-
-.logo h1 {
-    font-size: 1rem;
-    margin: 0;
-    padding: 0;
-    line-height: 1.1;
-}
-
-.nav-links {
-    margin: 1px 50;
-    text-align: center;
-    width: fit-content;
+@media (max-width: 991.98px) {
+    
   
-}
-
-.nav-links .nav-link {
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    color: #dcd3ff !important;
-    font-weight: 500;
-}
-
-
-
-/* =======================================
-    📱 MÓVILES: max-width: 360px 
-    ======================================= */
-@media (max-width: 360px) {
-
-    /* NAVBAR más delgada */
-    .navbar-glass {
-        /* Usar unidades relativas como rem */
-        padding: 0.5rem 0.5rem; 
-        text-align: center;
-    }
-
-    /* LOGO centrado y con tamaño legible */
     .logo h1 {
-        /* **CRÍTICO: Corregido de 0.1rem a 1.2rem** */
-        font-size: 1.2rem; 
-        text-align: center; 
-        width: 100%; 
-        margin: 0 auto;
-        display: block; 
+        font-size: 1.4rem; 
+        white-space: nowrap;
+        text-align: left;
     }
 
-    /* Contenedor de enlaces: usa flexbox para la distribución */
-    .nav-links {
-        width: 100%; 
+    .navbar-collapse {
+        
+        background-color: rgba(23, 1, 44, 0.95); 
+        border-top: 1px solid rgba(211, 205, 226, 0.1);
+        padding-bottom: 10px;
+       
+        margin-top: 10px; 
+    }
+
+
+    .navbar-collapse .nav-links {
         display: flex;
-        justify-content: center; /* Centra los enlaces horizontalmente */
-        align-items: center; 
+        flex-direction: column; /
+        width: 100%;
         text-align: center;
-        gap: 0.3rem; /* Espacio entre los enlaces */
-        /* Considera cambiar a una columna si son muchos enlaces */
-        flex-wrap: wrap; 
     }
 
-    /* Enlaces más pequeños */
-    .nav-links .nav-link {
-        font-size: 0.7rem; 
-        padding: 0.3rem 0.5rem;
-        /* text-align: center no es necesario aquí, ya que el contenedor lo centra */
+    
+    .navbar-collapse .nav-links .nav-link {
+        color: var(--text-light) !important;
+        text-align: center;
+        padding: 0.75rem 1rem !important;
+        font-size: 1rem;
+        margin: 0 auto;
+        transition: background-color 0.3s ease;
+    }
+    
+    .navbar-collapse .nav-links .nav-link:hover {
+        background-color: rgba(107, 91, 149, 0.2); 
+        transform: none; 
     }
 
-    /* Dropdown adaptado al centro */
-    .dropdown-menu {
-        text-align: center; 
-        width: 100%; 
+    /* Ajuste de padding de la sección en tablets */
+    section {
+        padding: 3rem 1.5rem; 
+        margin-top: 80px auto 0;
     }
 }
 
 
-/* ================================
-   📱 TABLET 768px
-   ================================ */
-@media (max-width: 768px) {
-
-    .navbar-glass {
-        padding: 0.35rem 1rem !important;
-        min-height: 50px !important;
-    }
-
-    /* Logo más compacto */
+/* MÓVILES EXTREMOS (max-width: 480px) */
+@media (max-width: 480px) {
+    
     .logo h1 {
-        font-size: 1.4rem !important;
-        white-space: nowrap !important;
-        text-align: center !important;
+        font-size: 1.2rem;
+        white-space: normal;
+        line-height: 1.2;
     }
 
-    .nav-links .nav-link {
-        font-size: 0.85rem !important;
-        padding: 0.3rem 0.7rem !important;
+    section {
+        padding: 2rem 0.5rem; 
+        margin-top: 70px auto 0;
+    }
+
+    
+    #intro h1 {
+        font-size: 2.5rem; 
+    }
+    
+    #formation h2, #projects h1 {
+        font-size: 2rem;
+    }
+    
+    #projects h2 {
+        font-size: 1.4rem;
+    }
+    
+    p {
+        font-size: 1rem;
+    }
+
+    .project-card {
+        padding: 1rem;
     }
 }
