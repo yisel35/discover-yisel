@@ -275,70 +275,96 @@ img:hover {
    MEDIA QUERIES PARA ADAPTABILIDAD
    ============================== */
 
+/* ================================================= */
+/* 1. MÓVILES Y PANTALLAS PEQUEÑAS (HASTA 768PX)    */
+/* ================================================= */
 @media (max-width: 768px) {
     
-    /* NAVEGACIÓN (Para que el logo y el menú no se amontonen) */
-    .navbar-brand {
-        font-size: 1.2rem !important; /* Haz el logo un poco más pequeño */
-        max-width: 50%; /* Evita que el logo sea muy ancho */
-    }
+    /* === AJUSTES DE ESTRUCTURA Y ESPACIADO === */
     
-    /* CONTENEDOR PRINCIPAL (La tarjeta con el borde LED) */
-    .intro-card {
-        padding: 1.5rem 1rem !important; /* Reduce el relleno interno */
-        margin: 0.5rem !important; /* Asegura que haya un margen pequeño alrededor */
-        max-width: 95% !important; /* Usa casi todo el ancho disponible */
-        box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
-    }
-    
-    /* TITULAR H1 (El texto "Hola, Soy Kimberlynn M.") */
-    .intro-card h1 {
-        font-size: 2rem !important; /* Haz el título más pequeño para caber */
-        margin-bottom: 1rem !important;
-    }
-    
-    /* TEXTO DE PÁRRAFO */
-    .intro-card p {
-        font-size: 1rem !important; /* Reduce el tamaño del texto */
-        line-height: 1.5; /* Aumenta el espaciado de línea para mejor lectura */
-        margin-bottom: 1rem !important;
-    }
-
-    /* BOTONES (Para que se vean mejor alineados) */
-    .flex-wrap {
-        /* Asegura que los botones se envuelvan y centren */
-        justify-content: center !important; 
-    }
-    
-    /* ESPACIADO ENTRE SECCIONES */
+    /* Espaciado de todas las secciones */
     section {
         padding: 4rem 1rem !important; /* Reduce el padding vertical y lateral */
     }
     
-    /* IMÁGENES */
-    img {
-        max-width: 100%; /* Las imágenes pueden ocupar todo el ancho */
+    /* Contenedor principal de la Intro (La tarjeta con borde LED) */
+    .intro-card {
+        /* Reduce el padding interno y usa casi todo el ancho */
+        padding: 1.5rem 1rem !important; 
+        margin: 0.5rem auto !important; 
+        max-width: 95% !important; 
+        box-sizing: border-box; 
     }
     
-    /* TITULOS DE SECCIÓN (Para que no sean muy grandes) */
+    /* === AJUSTES DE NAVEGACIÓN (Navbar) === */
+    
+    /* Logo (Navbar.Brand) */
+    .navbar-brand {
+        font-size: 1.2rem !important; /* Logo más pequeño */
+        max-width: 70%; /* Le da espacio para el botón de hamburguesa */
+        line-height: 1.2;
+        padding-right: 1rem;
+    }
+
+    /* Estilos del Menú Desplegable (Navbar.Collapse) */
+    .navbar-collapse {
+        /* Soluciona la superposición */
+        position: absolute; 
+        top: 100%; /* Se coloca justo debajo de la barra */
+        left: 0;
+        right: 0;
+        z-index: 1050; /* Lo coloca encima del logo y el fondo */
+        
+        /* Estilos visuales */
+        background-color: #1E003C; /* Fondo oscuro y sólido para legibilidad */
+        padding: 1rem 1.5rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); 
+        border-radius: 0 0 0.5rem 0.5rem; 
+    }
+
+    /* Enlaces dentro del menú colapsado */
+    .navbar-collapse .nav-link {
+        font-size: 1rem; 
+        color: #c6b7eb !important; /* Color claro para la legibilidad */
+        padding: 0.5rem 0;
+        text-align: left; /* Alineados a la izquierda en el menú */
+    }
+    
+    /* === AJUSTES DE TIPOGRAFÍA === */
+    
+    /* Título H1 (Hola, Soy Kimberlynn M.) */
+    .intro-card h1 {
+        font-size: 2rem !important; /* Tamaño legible en móvil */
+        margin-bottom: 1rem !important;
+    }
+    
+    /* Párrafos */
+    .intro-card p {
+        font-size: 1rem !important; /* Texto de cuerpo de tamaño estándar */
+        line-height: 1.6; /* Aumenta el espaciado para mejor lectura */
+        margin-bottom: 1rem !important;
+    }
+    
+    /* Subtítulo de Rol */
+     .intro-card h3 {
+        font-size: 0.8rem !important; 
+    }
+
+    /* === AJUSTES DE COMPONENTES === */
+    
+    /* Botones de CTA */
+    .flex-wrap {
+        justify-content: center !important; /* Centra los botones cuando se envuelven */
+        gap: 0.75rem !important; /* Reduce el espacio entre botones */
+    }
+    
+    /* Imágenes */
+    img {
+        max-width: 100%; 
+    }
+    
+    /* Títulos de otras secciones */
     #formation h2, #projects h1 {
         font-size: 1.75rem !important;
-    }
-}
-/* Esto aplica solo en móviles, cuando el menú se ha colapsado */
-@media (max-width: 991.98px) {
-    
-    .navbar-collapse {
-        background-color: #1E003C; /* Fondo sólido para que el menú sea legible */
-        padding: 1rem;
-        margin-top: 0.5rem;
-        border-radius: 0.5rem;
-    }
-    
-    .navbar-collapse .nav-link {
-        font-size: 1.1rem; /* El texto de los enlaces un poco más grande y claro */
-        color: #c6b7eb !important; /* Asegura un color claro para la legibilidad */
-        padding: 0.5rem 0; /* Espaciado entre los enlaces */
-        text-align: left; /* Alinea los enlaces a la izquierda en el menú desplegado */
     }
 }
