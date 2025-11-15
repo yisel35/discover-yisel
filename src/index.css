@@ -1,4 +1,4 @@
-::root {
+:root {
   --primary: #6b5b95;
   --primary-light: #000000;
   --secondary: #f7cac9;
@@ -218,13 +218,15 @@ img:hover {
 
 
 #formation h2 {
-  color: #c6b7eb;
+  color: #ab96dfcc;
   text-align: center;
   margin-bottom: 2.5rem;
   font-size: 4rem;
   font-weight: 700;
 }
-
+#formation p{
+  color: #000000;
+}
 #projects h1 {
   color: #c2b8db;
   margin-bottom: 2.5rem;
@@ -315,11 +317,12 @@ img:hover {
     font-size: 1.4rem;
     white-space: nowrap;
     text-align: left;
+
   }
 
   .navbar-collapse {
     background-color: rgba(23, 1, 44, 0.95);
-    border-top: 1px solid rgba(211, 205, 226, 0.1);
+    border-top: 1px solid rgba(239, 236, 247, 0.1);
     padding-bottom: 10px;
     margin-top: 10px;
   }
@@ -334,7 +337,7 @@ img:hover {
 
 
   .navbar-collapse .nav-links .nav-link {
-    color: var(--text-light) !important;
+    color: white !important;
     text-align: center;
     padding: 0.75rem 1rem !important;
     font-size: 1rem;
@@ -343,7 +346,7 @@ img:hover {
   }
 
   .navbar-collapse .nav-links .nav-link:hover {
-    background-color: rgba(107, 91, 149, 0.2);
+    background-color: rgb(175, 149, 236);
     transform: none;
   }
 
