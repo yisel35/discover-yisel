@@ -10,6 +10,67 @@
   --card-border: rgba(255, 255, 255, 0.1);
 }
 
+.intro-card {
+  position: relative; /* Importante para que los pseudo-elementos se posicionen correctamente */
+  overflow: hidden;   /* Esconde el desbordamiento de la animación del borde */
+  
+  /* Asegura que el contenido esté por encima del pseudo-elemento */
+  z-index: 1; 
+  /* Si necesitas que el fondo de la tarjeta sea más oscuro que el borde */
+  background-color: rgba(18, 0, 36, 0.85); /* Un morado muy oscuro para el fondo */
+  
+  /* Resto de tus estilos, como el rounded-2xl, shadow, etc. */
+  border-radius: 1.5rem; /* Ajusta este valor si tu rounded-2xl es diferente */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); /* Sombra externa de la tarjeta */
+}
+
+/* Pseudo-elemento para el "borde LED" */
+.intro-card::before {
+  content: '';
+  position: absolute;
+  top: -100%; /* Empieza desde arriba */
+  left: -100%; /* Empieza desde la izquierda */
+  width: 300%;  /* Suficientemente ancho para cubrir */
+  height: 300%; /* Suficientemente alto para cubrir */
+  
+  /* GRADIENTE DE COLOR PARA EL EFECTO LED */
+  background: conic-gradient(
+    from 0deg, 
+    transparent 0%, 
+    transparent 20%, /* Empieza transparente */
+    #a64dfc 30%,     /* Color morado brillante */
+    #f200c8 40%,     /* Color rosa brillante */
+    transparent 50%, 
+    transparent 100% /* Termina transparente */
+  );
+  
+  /* Ajusta la opacidad si quieres que brille menos */
+  opacity: 0.8; 
+  
+  /* Animación de rotación */
+  animation: rotateBorder 8s linear infinite; /* 8 segundos, lineal, infinito */
+  
+  /* Asegura que el pseudo-elemento esté detrás del contenido de la tarjeta */
+  z-index: 0; 
+  border-radius: inherit; /* Hereda el redondeo de la tarjeta principal */
+}
+
+/* Animación de los colores del borde */
+@keyframes rotateBorder {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Ajusta los colores de los textos para que se vean bien sobre este fondo */
+.intro-card h1, .intro-card p {
+  color: white !important; /* Asegura que el texto sea blanco para contrastar */
+  position: relative; /* Asegura que el texto esté por encima del borde animado */
+  z-index: 2; /* Mayor que el z-index del pseudo-elemento */
+}
+
+.intro-card .text-violet-400 {
+  color: #c6b7eb !important; /* Ajusta el morado de tus highlights */
+}
 /* ==============================
    RESET, FIX DE ANDROID Y ESTILOS BASE
    ============================== */
@@ -52,9 +113,6 @@ body::before {
   z-index: -1;
 }
 
-/* ==============================
-   HEADER / NAVBAR
-   ============================== */
 
 header {
   position: fixed;
@@ -65,29 +123,51 @@ header {
   justify-content: center;
   align-items: center;
   z-index: 100;
-  background: linear-gradient(90deg, #6c6672, #898794);
- 
-}
-.logo {
-  color: #c6b7eb;
-}
-nav a {
-  color: var(--text-light) !important; 
-  margin: 0 1.5rem;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease, transform 0.2s ease;
+
 }
 
-nav a:hover,
-nav a:focus {
-  color: var(--accent) !important; 
-  transform: translateY(-2px);
+.navbar-glass .nav-links a {
+    /* Color base de los enlaces */
+    color: rgb(255, 255, 255) !important; 
+    margin: 0 1.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
-/* ==============================
-   SECCIONES: CONTENEDOR PRINCIPAL (Mobile First)
-   ============================== */
+.navbar-glass .nav-links a:hover,
+.navbar-glass .nav-links a:focus {
+   
+    color: #fdfdfd !important; 
+    transform: translateY(-2px);
+}
+
+/* Mantén tu logo */
+.logo h1 {
+  font-size: 2.5rem;
+  color: #f7f7f7; 
+  letter-spacing: 0.05em; 
+  font-weight: 400;
+  text-transform: uppercase;
+  text-shadow: 
+    2px 2px 4px rgba(177, 9, 9, 0.4), 
+    0px 0px 10px rgba(253, 252, 253, 0.3); 
+  
+}
+.navbar-glass {
+
+  background-color: rgba(23, 1, 44, 0.90); 
+  backdrop-filter: none; 
+  -webkit-backdrop-filter: none; 
+  box-shadow: 
+    0 4px 12px rgba(111, 63, 150, 0.5), 
+    0 0 20px rgba(78, 68, 104, 0.2); 
+
+
+  border-bottom: 1px solid rgba(211, 205, 226, 0.1); 
+  padding: 1rem 0;
+}
+
 section {
   width: 100%; 
   padding: 6rem 2rem;
@@ -128,9 +208,7 @@ section a:hover {
   color: var(--accent); 
 }
 
-/* ==============================
-   ESTILOS ESPECÍFICOS DE SECCIONES
-   ============================== */
+
 
 #intro p {
   color: var(--text-light); 
@@ -158,8 +236,6 @@ img {
   width: 100%;
   max-width: 800px; 
   border-radius: 15px;
-  /* La variable shadow-light no existe, la elimino para evitar errores */
-  /* box-shadow: 0 6px 25px var(--shadow-light); */ 
   transform: none; 
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }

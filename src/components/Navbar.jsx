@@ -1,15 +1,39 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import Nav from 'react-bootstrap/Nav';
+import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
+import "bootstrap/dist/css/bootstrap.min.css"; 
 
-
-export default function Navbar() {
+export default function MyImpactfulNavbar() {
   return (
-    <header className="navbar-glass">
-      <h1 className="logo">Sobre mi </h1>
-      <nav className="nav-links">
-        <a href="#formation">Formación</a>
-         <a href="#projects">Proyectos</a>
-      </nav>
-    </header>
+    // 'sticky-top' es opcional, si quieres que la barra se quede fija al hacer scroll.
+    <Navbar className="navbar-glass" expand="lg" sticky="top"> 
+      <Container>
+        
+     
+        <Navbar.Brand 
+          className="logo" 
+          style={{ fontSize: '2.5rem' }} 
+        >
+        
+         <h1>🚀Kimberlyn M. | Mi viaje creativo🌍</h1>
+        </Navbar.Brand>
+        <Nav className="nav-links ms-auto" activeKey="#home">
+          
+          <Nav.Item>
+            <Nav.Link href="#intro">Inicio</Nav.Link> 
+          </Nav.Item>
+
+          <Nav.Item>
+            <Nav.Link href="#formation">Formación</Nav.Link>
+          </Nav.Item>
+          
+          <Nav.Item>
+            <Nav.Link href="#projects">Proyectos</Nav.Link>
+          </Nav.Item>
+          
+        </Nav>
+      </Container>
+    </Navbar>
   );
 }
