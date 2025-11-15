@@ -10,67 +10,7 @@
   --card-border: rgba(255, 255, 255, 0.1);
 }
 
-.intro-card {
-  position: relative; /* Importante para que los pseudo-elementos se posicionen correctamente */
-  overflow: hidden;   /* Esconde el desbordamiento de la animación del borde */
-  
-  /* Asegura que el contenido esté por encima del pseudo-elemento */
-  z-index: 1; 
-  /* Si necesitas que el fondo de la tarjeta sea más oscuro que el borde */
-  background-color: rgba(18, 0, 36, 0.85); /* Un morado muy oscuro para el fondo */
-  
-  /* Resto de tus estilos, como el rounded-2xl, shadow, etc. */
-  border-radius: 1.5rem; /* Ajusta este valor si tu rounded-2xl es diferente */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); /* Sombra externa de la tarjeta */
-}
 
-/* Pseudo-elemento para el "borde LED" */
-.intro-card::before {
-  content: '';
-  position: absolute;
-  top: -100%; /* Empieza desde arriba */
-  left: -100%; /* Empieza desde la izquierda */
-  width: 300%;  /* Suficientemente ancho para cubrir */
-  height: 300%; /* Suficientemente alto para cubrir */
-  
-  /* GRADIENTE DE COLOR PARA EL EFECTO LED */
-  background: conic-gradient(
-    from 0deg, 
-    transparent 0%, 
-    transparent 20%, /* Empieza transparente */
-    #a64dfc 30%,     /* Color morado brillante */
-    #f200c8 40%,     /* Color rosa brillante */
-    transparent 50%, 
-    transparent 100% /* Termina transparente */
-  );
-  
-  /* Ajusta la opacidad si quieres que brille menos */
-  opacity: 0.8; 
-  
-  /* Animación de rotación */
-  animation: rotateBorder 8s linear infinite; /* 8 segundos, lineal, infinito */
-  
-  /* Asegura que el pseudo-elemento esté detrás del contenido de la tarjeta */
-  z-index: 0; 
-  border-radius: inherit; /* Hereda el redondeo de la tarjeta principal */
-}
-
-/* Animación de los colores del borde */
-@keyframes rotateBorder {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* Ajusta los colores de los textos para que se vean bien sobre este fondo */
-.intro-card h1, .intro-card p {
-  color: white !important; /* Asegura que el texto sea blanco para contrastar */
-  position: relative; /* Asegura que el texto esté por encima del borde animado */
-  z-index: 2; /* Mayor que el z-index del pseudo-elemento */
-}
-
-.intro-card .text-violet-400 {
-  color: #c6b7eb !important; /* Ajusta el morado de tus highlights */
-}
 /* ==============================
    RESET, FIX DE ANDROID Y ESTILOS BASE
    ============================== */
@@ -335,85 +275,53 @@ img:hover {
    MEDIA QUERIES PARA ADAPTABILIDAD
    ============================== */
 
-/* 1. TELÉFONOS (Hasta 768px) */
 @media (max-width: 768px) {
     
-    /* TIPOGRAFÍA */
-    #intro h1 {
-        font-size: 2.5rem; /* Ajuste más pequeño */
+    /* NAVEGACIÓN (Para que el logo y el menú no se amontonen) */
+    .navbar-brand {
+        font-size: 1.2rem !important; /* Haz el logo un poco más pequeño */
+        max-width: 50%; /* Evita que el logo sea muy ancho */
     }
     
-    /* NAVEGACIÓN (Se apila verticalmente) */
-    nav {
-        flex-direction: column; 
-        align-items: center; 
+    /* CONTENEDOR PRINCIPAL (La tarjeta con el borde LED) */
+    .intro-card {
+        padding: 1.5rem 1rem !important; /* Reduce el relleno interno */
+        margin: 0.5rem !important; /* Asegura que haya un margen pequeño alrededor */
+        max-width: 95% !important; /* Usa casi todo el ancho disponible */
+        box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    }
+    
+    /* TITULAR H1 (El texto "Hola, Soy Kimberlynn M.") */
+    .intro-card h1 {
+        font-size: 2rem !important; /* Haz el título más pequeño para caber */
+        margin-bottom: 1rem !important;
+    }
+    
+    /* TEXTO DE PÁRRAFO */
+    .intro-card p {
+        font-size: 1rem !important; /* Reduce el tamaño del texto */
+        line-height: 1.5; /* Aumenta el espaciado de línea para mejor lectura */
+        margin-bottom: 1rem !important;
     }
 
-    nav a {
-        margin: 0.5rem 0; 
-        width: 100%; 
-        text-align: center;
+    /* BOTONES (Para que se vean mejor alineados) */
+    .flex-wrap {
+        /* Asegura que los botones se envuelvan y centren */
+        justify-content: center !important; 
     }
     
-    /* SECCIONES (AJUSTE CLAVE) */
+    /* ESPACIADO ENTRE SECCIONES */
     section {
-        padding: 4rem 1rem; /* Reduce el padding horizontal */
-        margin-top: 60px; /* Reduce el margen superior */
-        max-width: 100%; /* Asegura que no tenga un límite de ancho */
-        margin-left: 0;
-        margin-right: 0;
+        padding: 4rem 1rem !important; /* Reduce el padding vertical y lateral */
     }
     
     /* IMÁGENES */
     img {
-        max-width: 95%; 
+        max-width: 100%; /* Las imágenes pueden ocupar todo el ancho */
     }
     
-    /* TITULOS DE SECCIÓN */
+    /* TITULOS DE SECCIÓN (Para que no sean muy grandes) */
     #formation h2, #projects h1 {
-        font-size: 2rem;
-    }
-}
-
-/* 2. TABLETAS (Entre 769px y 1024px) */
-@media (min-width: 769px) and (max-width: 1024px) {
-    
-    /* TIPOGRAFÍA */
-    #intro h1 {
-        font-size: 3rem;
-    }
-    
-    /* SECCIONES */
-    section {
-        padding: 6rem 3rem;
-    }
-    
-    /* NAVEGACIÓN */
-    nav {
-        justify-content: space-between;
-        padding: 1rem 2rem;
-    }
-}
-
-
-/* 3. ESCRITORIO (Más de 1025px) */
-@media (min-width: 1025px) {
-    
-    /* TIPOGRAFÍA */
-    #intro h1 {
-        font-size: 4rem;
-    }
-    
-    /* NAVEGACIÓN */
-    nav {
-        justify-content: space-around;
-        padding: 1.5rem 4rem;
-    }
-    
-    /* SECCIONES */
-    section {
-        padding: 8rem 4rem;
-        max-width: 1200px;
-        margin: 100px auto 0; 
+        font-size: 1.75rem !important;
     }
 }
