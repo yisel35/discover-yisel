@@ -313,7 +313,7 @@ img:hover {
 /* =======================================
    📱 MÓVILES: TODO MÁS PEQUEÑO Y CENTRADO
    ======================================= */
-@media (max-width: 480px) {
+@media (max-width: 360px) {
 
     /* NAVBAR más delgada */
     .navbar-glass {
