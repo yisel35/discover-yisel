@@ -313,46 +313,50 @@ img:hover {
 
 
 /* =======================================
-   📱 MÓVILES: TODO MÁS PEQUEÑO Y CENTRADO
-   ======================================= */
+    📱 MÓVILES: max-width: 360px 
+    ======================================= */
 @media (max-width: 360px) {
 
     /* NAVBAR más delgada */
     .navbar-glass {
-        padding: 0.3rem 0.6rem !important;
+        /* Usar unidades relativas como rem */
+        padding: 0.5rem 0.5rem; 
         text-align: center;
     }
 
-    /* LOGO centrado y más pequeño */
+    /* LOGO centrado y con tamaño legible */
     .logo h1 {
-        font-size: 0.1rem !important;
-        text-align: center !important;
-        width: 100% !important;
-        margin: 0 auto !important;
-        display: block !important;
-        
+        /* **CRÍTICO: Corregido de 0.1rem a 1.2rem** */
+        font-size: 1.2rem; 
+        text-align: center; 
+        width: 100%; 
+        margin: 0 auto;
+        display: block; 
     }
 
-  
+    /* Contenedor de enlaces: usa flexbox para la distribución */
     .nav-links {
-        width: 100% !important;
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-        text-align: center !important;
-        gap: 0.3rem !important;
+        width: 100%; 
+        display: flex;
+        justify-content: center; /* Centra los enlaces horizontalmente */
+        align-items: center; 
+        text-align: center;
+        gap: 0.3rem; /* Espacio entre los enlaces */
+        /* Considera cambiar a una columna si son muchos enlaces */
+        flex-wrap: wrap; 
     }
 
+    /* Enlaces más pequeños */
     .nav-links .nav-link {
-        font-size: 0.6rem !important;
-        padding: 0.3rem 0.5rem !important;
-        text-align: center !important;
+        font-size: 0.7rem; 
+        padding: 0.3rem 0.5rem;
+        /* text-align: center no es necesario aquí, ya que el contenedor lo centra */
     }
 
     /* Dropdown adaptado al centro */
     .dropdown-menu {
-        text-align: center !important;
-        width: 100% !important;
+        text-align: center; 
+        width: 100%; 
     }
 }
 
