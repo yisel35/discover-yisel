@@ -6,7 +6,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function MyImpactfulNavbar() {
   return (
-    // 'sticky-top' es opcional, si quieres que la barra se quede fija al hacer scroll.
     <Navbar className="navbar-glass" expand="lg" sticky="top"> 
       <Container>
         
@@ -18,7 +17,7 @@ export default function MyImpactfulNavbar() {
         
          <h1>🚀Kimberlyn M. | Mi viaje creativo🌍</h1>
         </Navbar.Brand>
-        <Nav className="nav-links ms-auto" activeKey="#home">
+        <Nav className="nav-links" activeKey="#intro">
           
           <Nav.Item>
             <Nav.Link href="#intro">Inicio</Nav.Link> 

@@ -286,19 +286,21 @@ img:hover {
 .navbar-glass {
     background: rgba(30, 0, 60, 0.7);
     backdrop-filter: blur(10px);
-    padding: 0.5rem 1rem !important;
+    padding: 0.5rem 0.5rem !important;
 }
 
 .logo h1 {
-    font-size: 1.8rem;
+    font-size: 1rem;
     margin: 0;
     padding: 0;
     line-height: 1.1;
-    white-space: nowrap; /* Para que NO se baje a 2 líneas */
 }
 
 .nav-links {
-    margin-left: auto !important;  /* Alinea los enlaces a la derecha */
+    margin: 1px 50;
+    text-align: center;
+    width: fit-content;
+  
 }
 
 .nav-links .nav-link {
@@ -323,25 +325,26 @@ img:hover {
 
     /* LOGO centrado y más pequeño */
     .logo h1 {
-        font-size: 1.2rem !important;
+        font-size: 0.1rem !important;
         text-align: center !important;
         width: 100% !important;
         margin: 0 auto !important;
         display: block !important;
+        
     }
 
-    /* Enlaces centrados y más pequeños */
+  
     .nav-links {
         width: 100% !important;
         display: flex !important;
         justify-content: center !important;
         align-items: center !important;
         text-align: center !important;
-        gap: 0.5rem !important;
+        gap: 0.3rem !important;
     }
 
     .nav-links .nav-link {
-        font-size: 0.8rem !important;
+        font-size: 0.6rem !important;
         padding: 0.3rem 0.5rem !important;
         text-align: center !important;
     }
@@ -368,6 +371,7 @@ img:hover {
     .logo h1 {
         font-size: 1.4rem !important;
         white-space: nowrap !important;
+        text-align: center !important;
     }
 
     .nav-links .nav-link {
