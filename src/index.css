@@ -244,12 +244,13 @@ img:hover {
 }
 
 #projects p {
-  color: var(--text-light);
+  color:black;
   text-align: center;
   margin-bottom: 2rem;
   font-size: 1.1rem;
   font-weight: 400;
   letter-spacing: 0.3px;
+
 }
 
 .project-card {

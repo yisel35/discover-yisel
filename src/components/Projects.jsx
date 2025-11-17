@@ -62,9 +62,7 @@ const BootstrapProjectCarousel = ({ images }) => {
   );
 };
 
-// =========================================================================
-// 3. COMPONENTE PRINCIPAL: PROJECTS
-// =========================================================================
+
 export default function Projects() {
   return (
     <section id="projects">
@@ -123,7 +121,6 @@ export default function Projects() {
               </div>
             )}
 
-            {/* CONTENIDO */}
             <div className="p-5 flex flex-col flex-grow">
               <h3 className="text-xl font-semibold text-violet-600 mb-2">
                 {p.title}
