@@ -4,9 +4,11 @@ import Carousel from 'react-bootstrap/Carousel';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 import MundoArcaneImg from '/images/arcane.png';
 import TurismoVenezuelaImg from '/images/venezuela.png';
+import RespiroprofundoImg from '/images/respiro.png';  
+import OraculoImg from '/images/Oraculo.png'; 
+
 import BancoShot1 from '/images/banco.png';
 import BancoShot2 from '/images/banco1.png';
 import BancoShot3 from '/images/banco2.png';
@@ -34,8 +36,21 @@ const proyectos = [
     demoLink: null,
     captures: [BancoShot1, BancoShot2, BancoShot3, BancoShot4],
   },
+  {
+    title: "Respiro Profundo — App para calmar la ansiedad",
+    tech: "React.js · JavaScript · React Bist · CSS",
+    desc: "Aplicación web interactiva diseñada para reducir la ansiedad mediante ejercicios guiados de respiración y una interfaz tranquila e intuitiva. Incluye animaciones suaves con React Bist para generar una experiencia relajante.",
+    image: RespiroprofundoImg,
+    demoLink: "https://respiroprofundo.netlify.app/",
+  },
+  {
+    title: "Oráculo Personal — Full Stack",
+    tech: "React.js · Node.js · JavaScript · CSS",
+    desc: "Aplicación full stack que combina lógica, interacción y Tarot digital para ofrecer una lectura personalizada basada en tu fecha de nacimiento. Calcula tu signo zodiacal, genera una tirada única de Arcanos Mayores y entrega consejos diarios en economía, amor y crecimiento personal.",
+    image: OraculoImg,
+    demoLink: "https://willowy-blancmange-6f464b.netlify.app/",
+  },
 ];
-
 
 const BootstrapProjectCarousel = ({ images }) => {
   return (
@@ -44,14 +59,12 @@ const BootstrapProjectCarousel = ({ images }) => {
         {images.map((imgSrc, index) => (
           <Carousel.Item key={index}>
             <img
-              
-              src={imgSrc} 
-              className="d-block w-100" 
+              src={imgSrc}
+              className="d-block w-100"
               alt={`Captura ${index + 1}`}
               style={{
-               
-                height: "100%", 
-                objectFit: "contain", 
+                height: "100%",
+                objectFit: "contain",
                 backgroundColor: "transparent",
               }}
             />
@@ -62,13 +75,10 @@ const BootstrapProjectCarousel = ({ images }) => {
   );
 };
 
-
 export default function Projects() {
   return (
     <section id="projects">
-      <h1>
-        Proyectos Destacados
-      </h1>
+      <h1>Proyectos Destacados</h1>
       <h2>
         💡 Donde la idea se transforma en código funcional 🎨<br />
         ¡Explora, haz clic y deja que la magia del desarrollo te sorprenda! 🚀<br />
@@ -85,7 +95,6 @@ export default function Projects() {
             viewport={{ once: true }}
             className="bg-white rounded-2xl overflow-hidden shadow-md border hover:shadow-lg transition-shadow duration-300 flex flex-col"
           >
-            
             {p.demoLink ? (
               <a
                 href={p.demoLink}
@@ -93,24 +102,20 @@ export default function Projects() {
                 rel="noopener noreferrer"
                 aria-label={`Ver demo de ${p.title}`}
                 className="block flex justify-center items-center bg-transparent"
-                
-                style={{ minHeight: "22rem", maxHeight: "22rem" }} 
+                style={{ minHeight: "22rem", maxHeight: "22rem" }}
               >
                 <img
                   src={p.image}
                   alt={p.title}
                   className="max-h-full max-w-full transition-transform duration-300 hover:scale-[1.03]"
-                  style={{
-                    objectFit: "contain",
-                  }}
+                  style={{ objectFit: "contain" }}
                 />
               </a>
             ) : p.captures ? (
               <BootstrapProjectCarousel images={p.captures} />
             ) : (
-              <div 
-                className="flex justify-center items-center bg-transparent" 
-                
+              <div
+                className="flex justify-center items-center bg-transparent"
                 style={{ minHeight: "22rem", maxHeight: "22rem" }}
               >
                 <img
@@ -122,9 +127,7 @@ export default function Projects() {
             )}
 
             <div className="p-5 flex flex-col flex-grow">
-              <h3 className="text-xl font-semibold text-violet-600 mb-2">
-                {p.title}
-              </h3>
+              <h3 className="text-xl font-semibold text-violet-600 mb-2">{p.title}</h3>
               <p className="text-sm text-gray-500 mb-1">{p.tech}</p>
               <p className="mt-2 text-gray-600 text-sm flex-grow">{p.desc}</p>
 
